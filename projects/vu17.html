@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VU17 Design &amp; Manufacturing — Randall Preston</title>
+  <meta name="description" content="Drivetrain design and carbon-fiber aerodynamics manufacturing on VU17, NovaRacing’s 2026 Formula SAE car.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="VU17 Design &amp; Manufacturing — Randall Preston">
+  <meta property="og:description" content="Drivetrain design and carbon-fiber aero manufacturing on NovaRacing’s 2026 FSAE car.">
+  <meta property="og:image" content="https://randallpreston.github.io/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <nav class="utility-nav" aria-label="Quick links">
+        <ul>
+          <li><a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="mailto:rprest01@villanova.edu">Email</a></li>
+          <li><a href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">Résumé PDF <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M6 11l6 6 6-6M5 20h14"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Randall Preston, home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22.75" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <g fill="none" stroke-width="3.4">
+            <path d="M12 35V14.6h5.5a5.4 5.4 0 0 1 0 10.8H12M16.5 25.4l5 9.6" stroke="#fff"/>
+            <path d="M26 35V14.6h4.5a5.4 5.4 0 0 1 0 10.8H26" stroke="#13B5EA"/>
+          </g>
+        </svg>
+        <span class="brand-text" aria-hidden="true">
+          <span class="brand-name">Randall Preston</span>
+          <span class="brand-sub">Mechanical Engineering</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#about">About</a></li>
+          <li class="has-dropdown" data-dropdown>
+            <a href="../index.html#projects" class="is-active">Projects</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="projects-menu">
+              <span class="sr-only">Show project pages</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ul class="dropdown" id="projects-menu">
+              <li><a href="vu17.html" aria-current="page"><span class="dd-title">VU17 Design &amp; Manufacturing</span><span class="dd-meta">NovaRacing FSAE · 2026</span></a></li>
+              <li><a href="vu18.html"><span class="dd-title">VU18 Drivetrain Design</span><span class="dd-meta">NovaRacing FSAE · In design</span></a></li>
+              <li><a href="beetlebot.html"><span class="dd-title">BeetleBot</span><span class="dd-meta">Course design competition</span></a></li>
+              <li><a href="me3-lab.html"><span class="dd-title">ME³ Lab Research</span><span class="dd-meta">Hydrogen permeation</span></a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#resume">Résumé</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile">
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li>
+            <a href="../index.html#projects">Projects</a>
+            <ul class="mobile-sub">
+              <li><a href="vu17.html" aria-current="page">VU17 Design &amp; Manufacturing</a></li>
+              <li><a href="vu18.html">VU18 Drivetrain Design</a></li>
+              <li><a href="beetlebot.html">BeetleBot</a></li>
+              <li><a href="me3-lab.html">ME³ Lab Research</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#resume">Résumé</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <ul class="mobile-utility">
+          <li><a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:rprest01@villanova.edu">Email</a></li>
+          <li><a href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">Résumé PDF</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="sub-nav" aria-label="Projects">
+    <div class="container sub-nav-inner">
+      <ul>
+        <li><a href="vu17.html" aria-current="page">VU17</a></li>
+        <li><a href="vu18.html">VU18</a></li>
+        <li><a href="beetlebot.html">BeetleBot</a></li>
+        <li><a href="me3-lab.html">ME³ Lab</a></li>
+      </ul>
+      <a class="sub-nav-all" href="../index.html#projects">All projects <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container page-hero-grid">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li aria-current="page">VU17</li>
+            </ol>
+          </nav>
+          <p class="eyebrow">NovaRacing FSAE <span class="sep" aria-hidden="true"></span> Car #64 <span class="sep" aria-hidden="true"></span> Winter–Spring 2026</p>
+          <h1 id="page-title" class="page-title">VU17 Design &amp; Manufacturing</h1>
+          <p class="lede">VU17 is NovaRacing’s 2026 Formula SAE car, which competed at FSAE Michigan. I joined the team in October 2025 as a drivetrain design engineer and worked on the design, manufacturing and assembly of drivetrain components. I also joined an inter-system effort that manufactured more than 30 carbon-fiber aerodynamic components for VU17 and a Senior Capstone Project.</p>
+          <dl class="meta-grid">
+            <div><dt>Role</dt><dd>Drivetrain Design Engineer; aero manufacturing support</dd></div>
+            <div><dt>Timeline</dt><dd>Winter–Spring 2026</dd></div>
+            <div><dt>Team</dt><dd>NovaRacing FSAE, Villanova University</dd></div>
+            <div><dt>Skills used</dt><dd>SolidWorks · Composites · Assembly · Testing</dd></div>
+          </dl>
+        </div>
+        <figure data-zoom>
+          <div class="media-frame">
+            <img src="../assets/img/vu17-car-1191.jpg"
+                 srcset="../assets/img/vu17-car-640.jpg 640w, ../assets/img/vu17-car-1191.jpg 1191w"
+                 sizes="(min-width: 1024px) 45vw, 100vw" width="1191" height="1059" fetchpriority="high"
+                 alt="NovaRacing’s VU17 Formula SAE car, number 64, in the paddock at FSAE Michigan">
+          </div>
+          <figcaption class="figure-caption">VU17, car #64, in the paddock at FSAE Michigan.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== On this page ===== -->
+    <section class="section" aria-labelledby="toc-title">
+      <div class="container">
+        <h2 id="toc-title" class="label toc-label">On this page</h2>
+        <div class="card-grid card-grid--toc">
+          <article class="card" data-reveal style="--i:0">
+            <div class="card-media">
+              <img src="../assets/img/front-wing-640.jpg"
+                   srcset="../assets/img/front-wing-640.jpg 640w, ../assets/img/front-wing-1280.jpg 1280w"
+                   sizes="(min-width: 640px) 50vw, 100vw" width="640" height="466" loading="lazy" decoding="async"
+                   alt="Finished carbon-fiber front wing assembly on a workbench">
+            </div>
+            <p class="card-meta label">01</p>
+            <h3 class="card-title"><a href="#aero">Aerodynamics Manufacturing<svg class="icon i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a></h3>
+            <p class="card-text">From tooling to finished wings: carbon-fiber layup, vacuum bagging, demolding and assembly.</p>
+          </article>
+          <article class="card" data-reveal style="--i:1">
+            <div class="card-media card-media--black">
+              <img src="../assets/img/drivetrain-render-960.jpg"
+                   srcset="../assets/img/drivetrain-render-960.jpg 960w, ../assets/img/drivetrain-render-1600.jpg 1600w"
+                   sizes="(min-width: 640px) 50vw, 100vw" width="960" height="540" loading="lazy" decoding="async"
+                   alt="Exploded render of the VU17 drivetrain assembly">
+            </div>
+            <p class="card-meta label">02</p>
+            <h3 class="card-title"><a href="#drivetrain">Drivetrain Design<svg class="icon i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a></h3>
+            <p class="card-text">Design, manufacturing and assembly of drivetrain components, backed by physical testing.</p>
+          </article>
+          <article class="card" data-reveal style="--i:2">
+            <div class="card-media">
+              <img src="../assets/img/fsae-michigan-engine-swap-640.jpg"
+                   srcset="../assets/img/fsae-michigan-engine-swap-640.jpg 640w, ../assets/img/fsae-michigan-engine-swap-1280.jpg 1280w"
+                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="640" height="480" loading="lazy" decoding="async"
+                   alt="The team working on the car at night in the competition paddock">
+            </div>
+            <p class="card-meta label">03</p>
+            <h3 class="card-title"><a href="#competition">At Competition<svg class="icon i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a></h3>
+            <p class="card-text">Competition week at FSAE Michigan, including an overnight engine swap.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 01 Aerodynamics Manufacturing ===== -->
+    <section id="aero" class="section" aria-labelledby="aero-title">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="label">01 / Aerodynamics Manufacturing</p>
+            <h2 id="aero-title" class="section-title">Aerodynamics Manufacturing</h2>
+            <div class="prose">
+              <p>Aero is its own subsystem on NovaRacing, but building a full aero package takes help from across the team. Working alongside the aero group, I helped manufacture carbon-fiber components for VU17, from tooling and layup through vacuum bagging, demolding and final assembly.</p>
+              <p>More than 30 components came out of that effort, for VU17 and for a Senior Capstone Project. This season I’m aiming for a larger role in aero design and manufacturing alongside my drivetrain work.</p>
+            </div>
+          </div>
+          <div class="split-aside">
+            <h3 class="label">Processes</h3>
+            <ul class="tag-list" aria-label="Composite processes">
+              <li class="tag">Wet layup</li>
+              <li class="tag">Resin infusion</li>
+              <li class="tag">Vacuum bagging</li>
+              <li class="tag">Post-processing</li>
+              <li class="tag">Assembly</li>
+            </ul>
+            <div class="data-row">
+              <div class="data-item">
+                <p class="data-value">30+</p>
+                <p class="data-label">Carbon-fiber components manufactured</p>
+              </div>
+              <div class="data-item">
+                <p class="data-value">2</p>
+                <p class="data-label">Programs supported: VU17 and a Senior Capstone</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ol class="process">
+          <li class="step">
+            <div class="step-text">
+              <p class="label">Step 01</p>
+              <h3 class="step-title">Tooling</h3>
+              <p class="step-desc">A composite part is only as good as its mold. Aero molds start on a CNC router, followed by hands-on mold work in the shop. The undertray mold was built up from stacked MDF.</p>
+            </div>
+            <div class="gallery">
+              <figure style="--ar: 0.94;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/undertray-mold-640.jpg"
+                       srcset="../assets/img/undertray-mold-640.jpg 640w, ../assets/img/undertray-mold-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 25vw, 100vw" width="640" height="681" loading="lazy" decoding="async"
+                       alt="Large undertray mold made from stacked MDF sheets, viewed from above">
+                </div>
+                <figcaption class="figure-caption">Undertray mold, built up from stacked MDF.</figcaption>
+              </figure>
+              <figure style="--ar: 0.75;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/cnc-router-mold-640.jpg"
+                       srcset="../assets/img/cnc-router-mold-640.jpg 640w, ../assets/img/cnc-router-mold-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 20vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                       alt="Two team members watching a CNC router cut a mold inside a plastic dust enclosure">
+                </div>
+                <figcaption class="figure-caption">Monitoring the CNC router as it cuts a mold for an aero part.</figcaption>
+              </figure>
+              <figure style="--ar: 0.75;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/mold-work-night-640.jpg"
+                       srcset="../assets/img/mold-work-night-640.jpg 640w, ../assets/img/mold-work-night-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 20vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                       alt="Randall in safety glasses and a dust-covered jacket outside the team shop at night">
+                </div>
+                <figcaption class="figure-caption">Covered in dust after a late night of mold work.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step-text">
+              <p class="label">Step 02</p>
+              <h3 class="step-title">Layup &amp; vacuum bagging</h3>
+              <p class="step-desc">Carbon fiber is laid into the mold, then sealed under a vacuum bag. Atmospheric pressure consolidates the laminate against the mold while the resin cures.</p>
+            </div>
+            <div class="gallery">
+              <figure style="--ar: 0.75;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/undertray-bagging-640.jpg"
+                       srcset="../assets/img/undertray-bagging-640.jpg 640w, ../assets/img/undertray-bagging-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 20vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                       alt="Undertray layup sealed under a vacuum bag with a vacuum pump in the foreground">
+                </div>
+                <figcaption class="figure-caption">Undertray under vacuum.</figcaption>
+              </figure>
+              <figure style="--ar: 1.548;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/front-wing-bagging-640.jpg"
+                       srcset="../assets/img/front-wing-bagging-640.jpg 640w, ../assets/img/front-wing-bagging-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 30vw, 100vw" width="640" height="414" loading="lazy" decoding="async"
+                       alt="Front wing elements sealed under a vacuum bag on a metal tool plate">
+                </div>
+                <figcaption class="figure-caption">Front wing elements under vacuum.</figcaption>
+              </figure>
+              <figure style="--ar: 0.663;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/nosecone-bagging-640.jpg"
+                       srcset="../assets/img/nosecone-bagging-640.jpg 640w, ../assets/img/nosecone-bagging-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 18vw, 100vw" width="640" height="966" loading="lazy" decoding="async"
+                       alt="Nosecone layup in its mold under a vacuum bag with resin lines attached">
+                </div>
+                <figcaption class="figure-caption">Nosecone layup under vacuum.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step-text">
+              <p class="label">Step 03</p>
+              <h3 class="step-title">Cure &amp; demold</h3>
+              <p class="step-desc">Once cured, parts come off the mold and move on to trimming and finishing.</p>
+            </div>
+            <div class="gallery">
+              <figure style="--ar: 1.124;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/undertray-demolded-640.jpg"
+                       srcset="../assets/img/undertray-demolded-640.jpg 640w, ../assets/img/undertray-demolded-1259.jpg 1259w"
+                       sizes="(min-width: 1024px) 22vw, 100vw" width="640" height="569" loading="lazy" decoding="async"
+                       alt="The cured carbon-fiber undertray on a shop table after demolding">
+                </div>
+                <figcaption class="figure-caption">The cured VU17 undertray after demolding.</figcaption>
+              </figure>
+              <figure style="--ar: 1.333;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/demolded-part-side-640.jpg"
+                       srcset="../assets/img/demolded-part-side-640.jpg 640w, ../assets/img/demolded-part-side-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 26vw, 100vw" width="640" height="480" loading="lazy" decoding="async"
+                       alt="Glossy carbon-fiber part on kraft paper with rough, untrimmed edges">
+                </div>
+                <figcaption class="figure-caption">A freshly demolded carbon-fiber part, flanges still untrimmed.</figcaption>
+              </figure>
+              <figure style="--ar: 0.75;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/demolded-part-angle-640.jpg"
+                       srcset="../assets/img/demolded-part-angle-640.jpg 640w, ../assets/img/demolded-part-angle-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 16vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                       alt="Three-quarter view of the same demolded carbon-fiber part on a shop table">
+                </div>
+                <figcaption class="figure-caption">The same part from another angle, before trimming.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step-text">
+              <p class="label">Step 04</p>
+              <h3 class="step-title">Post-processing &amp; assembly</h3>
+              <p class="step-desc">Finished elements are trimmed, fitted with mounting hardware, assembled into complete wings and installed on the car.</p>
+            </div>
+            <div class="gallery">
+              <figure style="--ar: 1.373;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/front-wing-640.jpg"
+                       srcset="../assets/img/front-wing-640.jpg 640w, ../assets/img/front-wing-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 30vw, 100vw" width="640" height="466" loading="lazy" decoding="async"
+                       alt="Assembled carbon-fiber front wing with endplates and mounting brackets">
+                </div>
+                <figcaption class="figure-caption">Front wing assembly.</figcaption>
+              </figure>
+              <figure style="--ar: 1.378;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/rear-wing-640.jpg"
+                       srcset="../assets/img/rear-wing-640.jpg 640w, ../assets/img/rear-wing-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 30vw, 100vw" width="640" height="464" loading="lazy" decoding="async"
+                       alt="Assembled multi-element carbon-fiber rear wing with endplates and mounting struts">
+                </div>
+                <figcaption class="figure-caption">Rear wing assembly.</figcaption>
+              </figure>
+              <figure style="--ar: 0.75;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/aero-install-suit-640.jpg"
+                       srcset="../assets/img/aero-install-suit-640.jpg 640w, ../assets/img/aero-install-suit-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 16vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                       alt="Randall in a Tyvek suit, respirator and safety glasses, holding a rotary cutting tool">
+                </div>
+                <figcaption class="figure-caption">Suited up in Tyvek and a respirator for carbon aero installation work.</figcaption>
+              </figure>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 02 Drivetrain Design ===== -->
+    <section id="drivetrain" class="section" aria-labelledby="drivetrain-title">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="label">02 / Drivetrain Design</p>
+            <h2 id="drivetrain-title" class="section-title">Drivetrain Design</h2>
+            <div class="prose">
+              <p>The drivetrain carries power from the engine to the rear wheels. On VU17 I took part in goal-oriented design, manufacturing and assembly of its components. That season set up my role as the drivetrain lead for VU18.</p>
+            </div>
+          </div>
+          <div class="split-aside">
+            <h3 class="label">Scope</h3>
+            <ul class="bullets">
+              <li>Goal-oriented component design</li>
+              <li>Manufacturing and assembly</li>
+              <li>Physical testing of hardware</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <figure class="render-figure" data-zoom>
+        <div class="media-frame">
+          <img src="../assets/img/drivetrain-render-1600.jpg"
+               srcset="../assets/img/drivetrain-render-960.jpg 960w, ../assets/img/drivetrain-render-1600.jpg 1600w, ../assets/img/drivetrain-render-2400.jpg 2400w"
+               sizes="100vw" width="1600" height="900" loading="lazy" decoding="async"
+               data-full="../assets/img/drivetrain-render-2400.jpg"
+               alt="Exploded render of the VU17 drivetrain assembly: half-shafts, sprocket and differential with its mounting plates">
+        </div>
+        <figcaption class="container figure-caption">Exploded render of the VU17 drivetrain assembly: half-shafts, sprocket and differential with its mounting plates.</figcaption>
+      </figure>
+
+      <div class="container">
+        <div class="subsection">
+          <div class="split split--media">
+            <div>
+              <p class="label">Component manufacturing</p>
+              <h3 class="subsection-title">Chain guard</h3>
+              <div class="prose">
+                <p>The chain guard covers VU17’s drive chain. These photos show the carbon-fiber guard during finishing.</p>
+              </div>
+            </div>
+            <div class="gallery">
+              <figure style="--ar: 0.67;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/chain-guard-coated-640.jpg"
+                       srcset="../assets/img/chain-guard-coated-640.jpg 640w, ../assets/img/chain-guard-coated-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 26vw, 100vw" width="640" height="955" loading="lazy" decoding="async"
+                       alt="Curved dark-blue chain guard standing on a cardboard box beside a heat gun">
+                </div>
+                <figcaption class="figure-caption">The VU17 chain guard after coating.</figcaption>
+              </figure>
+              <figure style="--ar: 0.75;" data-zoom>
+                <div class="media-frame">
+                  <img src="../assets/img/chain-guard-closeup-640.jpg"
+                       srcset="../assets/img/chain-guard-closeup-640.jpg 640w, ../assets/img/chain-guard-closeup-1280.jpg 1280w"
+                       sizes="(min-width: 1024px) 28vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                       alt="Close-up of the curved chain guard showing a blue-tinted carbon weave, next to a heat gun labeled Villanova M.E.">
+                </div>
+                <figcaption class="figure-caption">Close-up of the chain guard’s carbon weave under its blue finish.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <p class="label">Component testing</p>
+          <h3 class="subsection-title">Turnbuckle in tension</h3>
+          <div class="prose">
+            <p>Physical testing backs up design decisions. Here, a turnbuckle assembly (rod ends threaded into an aluminum hex body) was pulled in tension on a universal testing machine to measure how it responds under load.</p>
+          </div>
+
+          <div class="data-row">
+            <div class="data-item">
+              <p class="data-value">≈14<span class="unit">kN</span></p>
+              <p class="data-label">Peak tensile load</p>
+            </div>
+            <div class="data-item">
+              <p class="data-value">≈4.4<span class="unit">mm</span></p>
+              <p class="data-label">Displacement at end of test</p>
+            </div>
+          </div>
+
+          <div class="gallery">
+            <figure style="--ar: 1.108;" data-zoom>
+              <div class="media-frame">
+                <img src="../assets/img/turnbuckle-640.jpg"
+                     srcset="../assets/img/turnbuckle-640.jpg 640w, ../assets/img/turnbuckle-1206.jpg 1206w"
+                     sizes="(min-width: 1024px) 30vw, 100vw" width="640" height="577" loading="lazy" decoding="async"
+                     alt="Turnbuckle with red rod ends and an aluminum hex body next to a ruler">
+              </div>
+              <figcaption class="figure-caption">Turnbuckle specimen.</figcaption>
+            </figure>
+            <figure style="--ar: 0.93;" data-zoom>
+              <div class="media-frame">
+                <img src="../assets/img/turnbuckle-tensile-test-640.jpg"
+                     srcset="../assets/img/turnbuckle-tensile-test-640.jpg 640w, ../assets/img/turnbuckle-tensile-test-1206.jpg 1206w"
+                     sizes="(min-width: 1024px) 25vw, 100vw" width="640" height="688" loading="lazy" decoding="async"
+                     alt="Turnbuckle clamped in the wedge grips of a universal testing machine">
+              </div>
+              <figcaption class="figure-caption">Specimen mounted in the testing machine’s grips.</figcaption>
+            </figure>
+            <figure style="--ar: 0.898;" data-zoom>
+              <div class="media-frame">
+                <img src="../assets/img/turnbuckle-force-displacement-640.jpg"
+                     srcset="../assets/img/turnbuckle-force-displacement-640.jpg 640w, ../assets/img/turnbuckle-force-displacement-991.jpg 991w"
+                     sizes="(min-width: 1024px) 25vw, 100vw" width="640" height="713" loading="lazy" decoding="async"
+                     alt="Force versus displacement plot rising to about 14 kilonewtons at about 4.4 millimeters">
+              </div>
+              <figcaption class="figure-caption">Force–displacement curve from the test.</figcaption>
+            </figure>
+          </div>
+          <p class="footnote">Values read from the force–displacement plot.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 At competition ===== -->
+    <section id="competition" class="section" aria-labelledby="competition-title">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="label">03 / At competition</p>
+            <h2 id="competition-title" class="section-title">FSAE Michigan</h2>
+            <div class="prose">
+              <p>VU17 competed at Formula SAE Michigan, held at Michigan International Speedway in May 2026.</p>
+              <p>During the competition, the car had an engine failure. That night I stayed up until 5 a.m. helping the team swap out the engine in the paddock. It was one of the best learning experiences of my season.</p>
+            </div>
+          </div>
+          <div class="split-aside">
+            <h3 class="label">Competition week</h3>
+            <ul class="bullets">
+              <li>Design presentation prep with the team ahead of the judging round</li>
+              <li>Overnight engine swap after an engine failure</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure style="--ar: 1.333;" data-zoom>
+            <div class="media-frame">
+              <img src="../assets/img/fsae-michigan-engine-swap-640.jpg"
+                   srcset="../assets/img/fsae-michigan-engine-swap-640.jpg 640w, ../assets/img/fsae-michigan-engine-swap-1280.jpg 1280w"
+                   sizes="(min-width: 1024px) 45vw, 100vw" width="640" height="480" loading="lazy" decoding="async"
+                   alt="The team working under light towers around the NovaRacing trailer at night">
+            </div>
+            <figcaption class="figure-caption">Swapping out VU17’s engine in the paddock after the failure. We wrapped up around 5 a.m.</figcaption>
+          </figure>
+          <figure style="--ar: 0.75;" data-zoom>
+            <div class="media-frame">
+              <img src="../assets/img/fsae-michigan-design-prep-640.jpg"
+                   srcset="../assets/img/fsae-michigan-design-prep-640.jpg 640w, ../assets/img/fsae-michigan-design-prep-1280.jpg 1280w"
+                   sizes="(min-width: 1024px) 25vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                   alt="Team members with laptops in the team trailer, preparing for design judging">
+            </div>
+            <figcaption class="figure-caption">Working on the design presentation in the team trailer before the judging round.</figcaption>
+          </figure>
+          <figure style="--ar: 0.75;" data-zoom>
+            <div class="media-frame">
+              <img src="../assets/img/fsae-michigan-mis-640.jpg"
+                   srcset="../assets/img/fsae-michigan-mis-640.jpg 640w, ../assets/img/fsae-michigan-mis-1280.jpg 1280w"
+                   sizes="(min-width: 1024px) 25vw, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                   alt="Randall standing on the catch-fence platform under a NASCAR Cup Series sign">
+            </div>
+            <figcaption class="figure-caption">Under the NASCAR Cup Series sign at Michigan International Speedway during competition week.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Next project ===== -->
+    <nav class="next-project container" aria-label="Next project">
+      <a href="vu18.html">
+        <span class="label">Next project</span>
+        <span class="next-title">VU18 Drivetrain Design</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <section class="resume-band" aria-label="Résumé">
+    <a class="resume-link" href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">
+      <span class="resume-link-main">View my résumé <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="resume-link-sub">PDF · Opens in a new tab</span>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> Randall Preston · Villanova University</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:rprest01@villanova.edu">Email</a>
+        <a href="#top">Back to top <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

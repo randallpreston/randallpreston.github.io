@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ME³ Lab Research — Randall Preston</title>
+  <meta name="description" content="Undergraduate research in Villanova’s ME³ Lab with Dr. Andrew Lee: designing and building a Devanathan–Stachurski dual cell to measure hydrogen permeation in structural metals.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ME³ Lab Research — Randall Preston">
+  <meta property="og:description" content="Hydrogen permeation testing in structural metals with Dr. Andrew Lee, Villanova University.">
+  <meta property="og:image" content="https://randallpreston.github.io/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <nav class="utility-nav" aria-label="Quick links">
+        <ul>
+          <li><a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="mailto:rprest01@villanova.edu">Email</a></li>
+          <li><a href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">Résumé PDF <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M6 11l6 6 6-6M5 20h14"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Randall Preston, home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22.75" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <g fill="none" stroke-width="3.4">
+            <path d="M12 35V14.6h5.5a5.4 5.4 0 0 1 0 10.8H12M16.5 25.4l5 9.6" stroke="#fff"/>
+            <path d="M26 35V14.6h4.5a5.4 5.4 0 0 1 0 10.8H26" stroke="#13B5EA"/>
+          </g>
+        </svg>
+        <span class="brand-text" aria-hidden="true">
+          <span class="brand-name">Randall Preston</span>
+          <span class="brand-sub">Mechanical Engineering</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#about">About</a></li>
+          <li class="has-dropdown" data-dropdown>
+            <a href="../index.html#projects" class="is-active">Projects</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="projects-menu">
+              <span class="sr-only">Show project pages</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ul class="dropdown" id="projects-menu">
+              <li><a href="vu17.html"><span class="dd-title">VU17 Design &amp; Manufacturing</span><span class="dd-meta">NovaRacing FSAE · 2026</span></a></li>
+              <li><a href="vu18.html"><span class="dd-title">VU18 Drivetrain Design</span><span class="dd-meta">NovaRacing FSAE · In design</span></a></li>
+              <li><a href="beetlebot.html"><span class="dd-title">BeetleBot</span><span class="dd-meta">Course design competition</span></a></li>
+              <li><a href="me3-lab.html" aria-current="page"><span class="dd-title">ME³ Lab Research</span><span class="dd-meta">Hydrogen permeation</span></a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#resume">Résumé</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile">
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li>
+            <a href="../index.html#projects">Projects</a>
+            <ul class="mobile-sub">
+              <li><a href="vu17.html">VU17 Design &amp; Manufacturing</a></li>
+              <li><a href="vu18.html">VU18 Drivetrain Design</a></li>
+              <li><a href="beetlebot.html">BeetleBot</a></li>
+              <li><a href="me3-lab.html" aria-current="page">ME³ Lab Research</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#resume">Résumé</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <ul class="mobile-utility">
+          <li><a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:rprest01@villanova.edu">Email</a></li>
+          <li><a href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">Résumé PDF</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="sub-nav" aria-label="Projects">
+    <div class="container sub-nav-inner">
+      <ul>
+        <li><a href="vu17.html">VU17</a></li>
+        <li><a href="vu18.html">VU18</a></li>
+        <li><a href="beetlebot.html">BeetleBot</a></li>
+        <li><a href="me3-lab.html" aria-current="page">ME³ Lab</a></li>
+      </ul>
+      <a class="sub-nav-all" href="../index.html#projects">All projects <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container page-hero-grid">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li aria-current="page">ME³ Lab</li>
+            </ol>
+          </nav>
+          <p class="eyebrow">Undergraduate Research Scholar Program <span class="sep" aria-hidden="true"></span> March 2026–Present <span class="status">Ongoing</span></p>
+          <h1 id="page-title" class="page-title">Hydrogen Permeation Testing in Structural Metals</h1>
+          <p class="page-subtitle">ME³ Lab: Materials Engineering in Extreme Environments</p>
+          <p class="lede">In Villanova’s ME³ Lab, I work with Dr. Andrew Lee and a team of six undergraduate and doctoral researchers. We study how hydrogen moves through structural metals, which matters for energy and automotive systems that use hydrogen.</p>
+          <dl class="meta-grid">
+            <div><dt>Advisor</dt><dd>Dr. Andrew Lee, Department of Mechanical Engineering</dd></div>
+            <div><dt>Timeline</dt><dd>March 2026–Present</dd></div>
+            <div><dt>Program</dt><dd>Undergraduate Research Scholar Program</dd></div>
+            <div><dt>Method</dt><dd>Electrochemical permeation (Devanathan–Stachurski)</dd></div>
+          </dl>
+          <div class="actions updates-actions">
+            <a class="btn btn-secondary" href="me3-lab-updates.html">Project Updates <svg class="icon i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+        <figure>
+          <div class="media-frame">
+            <img src="../assets/img/me3-cell.svg" width="1600" height="1000"
+                 alt="Schematic of a two-cell hydrogen permeation setup with a metal specimen between a charging cell and an oxidation cell">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Context + role ===== -->
+    <section class="section" aria-labelledby="context-title">
+      <div class="container split">
+        <div>
+          <p class="label">01 / Context</p>
+          <h2 id="context-title" class="section-title">Why hydrogen permeation matters</h2>
+          <div class="prose">
+            <p>Hydrogen can enter structural metals, diffuse through them and degrade their mechanical properties, a problem known as hydrogen embrittlement. As energy and automotive systems take on more hydrogen, engineers need reliable data on how quickly it moves through the metals those systems are built from.</p>
+            <p>Permeation testing measures exactly that.</p>
+          </div>
+        </div>
+        <div class="split-aside">
+          <h3 class="label">My role</h3>
+          <ul class="bullets">
+            <li>Design, build and validate an electrochemical permeation test setup based on the Devanathan–Stachurski dual cell</li>
+            <li>Meet weekly with the team and Dr. Lee to keep the lab’s task forces aligned</li>
+            <li>Use results to help set parameters for other experiments across the lab</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Method ===== -->
+    <section class="section" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">02 / Method</p>
+            <h2 id="method-title" class="section-title">How the dual cell works</h2>
+          </div>
+          <p class="section-intro">A thin metal specimen separates two electrochemical cells. Hydrogen is generated on one side, diffuses through the metal, and is measured as an electrical current on the other.</p>
+        </div>
+
+        <figure class="diagram" data-reveal>
+          <div class="diagram-scroll" tabindex="0" role="region" aria-label="Dual-cell diagram (scrollable)">
+            <svg viewBox="0 0 820 450" role="img" aria-labelledby="cell-title cell-desc">
+              <title id="cell-title">Devanathan–Stachurski dual-cell schematic</title>
+              <desc id="cell-desc">A metal specimen forms the wall between two cells. A galvanostat drives a cathodic charging current on the entry side, generating hydrogen that is absorbed by the specimen. The hydrogen diffuses through the specimen to the exit side, where a potentiostat holds the surface at an anodic potential and measures the oxidation current.</desc>
+              <defs>
+                <marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                  <path d="M0 1 10 5 0 9z" fill="#fff"/>
+                </marker>
+              </defs>
+
+              <!-- instruments -->
+              <rect class="dg-box" x="120" y="14" width="240" height="58" rx="4"/>
+              <text class="dg-title" x="240" y="40" text-anchor="middle">Galvanostat</text>
+              <text class="dg-label" x="240" y="60" text-anchor="middle">cathodic charging</text>
+              <rect class="dg-box" x="460" y="14" width="240" height="58" rx="4"/>
+              <text class="dg-title" x="580" y="40" text-anchor="middle">Potentiostat</text>
+              <text class="dg-label" x="580" y="60" text-anchor="middle">anodic hold · measures I(t)</text>
+
+              <!-- wires -->
+              <g fill="none" stroke="#8591a6" stroke-width="1.5">
+                <path d="M170 72V86H135V98"/>
+                <path d="M310 72V86H405V104"/>
+                <path d="M510 72V86H415V104"/>
+                <path d="M600 72V92H644V102"/>
+                <path d="M650 72V86H685V98"/>
+              </g>
+
+              <!-- electrolyte + cell walls -->
+              <rect class="dg-fluid" x="92" y="150" width="308" height="228"/>
+              <rect class="dg-fluid" x="420" y="150" width="308" height="228"/>
+              <path class="dg-line" d="M90 120V380H400"/>
+              <path class="dg-line" d="M420 380H730V120"/>
+
+              <!-- electrodes -->
+              <rect x="130" y="98" width="10" height="236" fill="#cfe9f7" fill-opacity=".85"/>
+              <text class="dg-label" x="122" y="112" text-anchor="end">CE</text>
+              <rect x="680" y="98" width="10" height="236" fill="#cfe9f7" fill-opacity=".85"/>
+              <text class="dg-label" x="698" y="112">CE</text>
+              <rect x="640" y="102" width="8" height="200" rx="4" fill="none" stroke="#cfe9f7" stroke-width="2"/>
+              <text class="dg-label" x="632" y="116" text-anchor="end">RE</text>
+
+              <!-- specimen -->
+              <rect class="dg-metal" x="400" y="104" width="20" height="292"/>
+
+              <!-- hydrogen -->
+              <g class="dg-h">
+                <circle cx="384" cy="205" r="5"/><circle cx="370" cy="252" r="5"/><circle cx="386" cy="296" r="5"/><circle cx="360" cy="330" r="5"/>
+              </g>
+              <g fill="#13b5ea">
+                <circle cx="410" cy="226" r="4"/><circle cx="410" cy="282" r="4"/>
+              </g>
+              <g class="dg-h" fill-opacity=".6">
+                <circle cx="436" cy="214" r="5"/><circle cx="446" cy="292" r="5"/>
+              </g>
+              <line x1="330" y1="356" x2="494" y2="356" stroke="#fff" stroke-width="2" marker-end="url(#dg-arrow)"/>
+              <text class="dg-label" x="504" y="361" fill="#fff">H diffusion</text>
+
+              <!-- reactions -->
+              <text class="dg-formula" x="245" y="196" text-anchor="middle">H⁺ + e⁻ → H(ads)</text>
+              <text class="dg-formula" x="245" y="222" text-anchor="middle">H(ads) → H(abs)</text>
+              <text class="dg-formula" x="530" y="252" text-anchor="middle">H(abs) → H⁺ + e⁻</text>
+
+              <!-- side labels -->
+              <text class="dg-label dg-accent" x="245" y="408" text-anchor="middle">ENTRY SIDE · CHARGING CELL</text>
+              <text class="dg-label dg-accent" x="575" y="408" text-anchor="middle">EXIT SIDE · OXIDATION CELL</text>
+              <text class="dg-label" x="410" y="438" text-anchor="middle">SPECIMEN (THICKNESS L)</text>
+            </svg>
+          </div>
+          <p class="scroll-hint label">Scroll sideways to see the full diagram</p>
+          <figcaption>On the entry side, a cathodic current generates atomic hydrogen at the specimen surface, and some of it is absorbed. It diffuses through the metal. On the exit side, a potentiostat holds the surface at an oxidizing potential, so each hydrogen atom that arrives is oxidized. The resulting current is a direct, real-time measure of hydrogen flux. CE: counter electrode · RE: reference electrode · schematic, not to scale.</figcaption>
+        </figure>
+
+        <figure class="diagram" data-reveal>
+          <div class="diagram-scroll" tabindex="0" role="region" aria-label="Permeation transient chart (scrollable)">
+            <svg viewBox="0 0 720 380" role="img" aria-labelledby="curve-title curve-desc">
+              <title id="curve-title">Illustrative hydrogen permeation transient</title>
+              <desc id="curve-desc">Normalized exit-side current versus time. The current stays near zero at first, rises in an S-shaped curve, and levels off at the steady-state value. The time lag is marked where the current reaches 63 percent of steady state.</desc>
+              <defs>
+                <marker id="ax-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M0 1 10 5 0 9z" fill="#8591a6"/>
+                </marker>
+              </defs>
+
+              <!-- axes -->
+              <g stroke="#8591a6" stroke-width="1.5" fill="none">
+                <line x1="80" y1="300" x2="698" y2="300" marker-end="url(#ax-arrow)"/>
+                <line x1="80" y1="300" x2="80" y2="36" marker-end="url(#ax-arrow)"/>
+              </g>
+              <text class="dg-label" x="690" y="326" text-anchor="end">TIME</text>
+              <text class="dg-label" x="92" y="30">PERMEATION CURRENT, J</text>
+
+              <!-- reference lines -->
+              <line class="dg-dash" x1="80" y1="60" x2="680" y2="60"/>
+              <line class="dg-dash" x1="80" y1="148.8" x2="250" y2="148.8"/>
+              <line class="dg-dash" x1="250" y1="148.8" x2="250" y2="300"/>
+              <text class="dg-label" x="72" y="64" text-anchor="end">J<tspan baseline-shift="sub" font-size="10">ss</tspan></text>
+              <text class="dg-label" x="72" y="153" text-anchor="end">0.63 J<tspan baseline-shift="sub" font-size="10">ss</tspan></text>
+              <text class="dg-label dg-accent" x="250" y="322" text-anchor="middle">t<tspan baseline-shift="sub" font-size="10">lag</tspan></text>
+              <text class="dg-label" x="600" y="50" text-anchor="middle">STEADY STATE</text>
+
+              <!-- transient -->
+              <polyline fill="none" stroke="#13b5ea" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"
+                points="80,300 100,300 110,299.6 120,297.4 130,291.8 140,282.9 150,271.2 160,257.9 180,229.7 200,202.6 220,178.6 246.7,152 280,126.5 330,100.8 380,85 430,75.2 480,69.4 580,63.5 680,61.3"/>
+              <circle cx="250" cy="148.8" r="6" fill="#000" stroke="#13b5ea" stroke-width="3"/>
+
+              <!-- formula -->
+              <rect class="dg-box" x="400" y="170" width="270" height="92" rx="4"/>
+              <text class="dg-formula" x="535" y="210" text-anchor="middle">D<tspan baseline-shift="sub" font-size="12">eff</tspan> = L² / 6 t<tspan baseline-shift="sub" font-size="12">lag</tspan></text>
+              <text class="dg-label" x="535" y="240" text-anchor="middle">TIME-LAG METHOD</text>
+            </svg>
+          </div>
+          <p class="scroll-hint label">Scroll sideways to see the full chart</p>
+          <figcaption>Once charging starts, the exit current stays near zero until hydrogen breaks through, then rises to a steady state. The time the current takes to reach 63% of steady state (the time lag, t<sub>lag</sub>) gives the effective diffusion coefficient for a specimen of thickness L. Illustrative, normalized curve, not measured data. Method described in ASTM G148 and ISO 17081.</figcaption>
+        </figure>
+
+        <div class="notice">
+          <p class="label">Results</p>
+          <p>Data from the lab will be added here once it’s cleared for sharing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Next project ===== -->
+    <nav class="next-project container" aria-label="Next project">
+      <a href="vu17.html">
+        <span class="label">Next project</span>
+        <span class="next-title">VU17 Design &amp; Manufacturing</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <section class="resume-band" aria-label="Résumé">
+    <a class="resume-link" href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">
+      <span class="resume-link-main">View my résumé <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="resume-link-sub">PDF · Opens in a new tab</span>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> Randall Preston · Villanova University</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:rprest01@villanova.edu">Email</a>
+        <a href="#top">Back to top <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

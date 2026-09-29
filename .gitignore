@@ -1,0 +1,9 @@
+# Original full-size photos. The site uses the optimized copies in assets/img/.
+Media/
+
+# Local editor / tool settings
+.claude/
+.vscode/
+Thumbs.db
+desktop.ini
+.DS_Store

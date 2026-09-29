@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Concept illustration of a composite half-shaft">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00205B"/>
+      <stop offset="1" stop-color="#000A22"/>
+    </linearGradient>
+    <pattern id="minor" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#13B5EA" stroke-opacity=".09"/>
+    </pattern>
+    <pattern id="major" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M200 0H0V200" fill="none" stroke="#13B5EA" stroke-opacity=".2" stroke-width="1.5"/>
+    </pattern>
+    <pattern id="weave" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0V28" stroke="#13B5EA" stroke-opacity=".45" stroke-width="2"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse">
+      <path d="M0 1 10 5 0 9z" fill="#13B5EA"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#minor)"/>
+  <rect width="1600" height="1000" fill="url(#major)"/>
+  <rect x="40" y="40" width="1520" height="920" fill="none" stroke="#13B5EA" stroke-opacity=".55" stroke-width="2"/>
+
+  <g font-family="Consolas, Menlo, 'DejaVu Sans Mono', 'Courier New', monospace" fill="#CFE9F7">
+    <!-- centerline -->
+    <line x1="120" y1="500" x2="1480" y2="500" stroke="#13B5EA" stroke-opacity=".7" stroke-width="2" stroke-dasharray="44 10 8 10"/>
+
+    <!-- half-shaft -->
+    <g fill="none" stroke="#13B5EA" stroke-width="4" stroke-linejoin="round">
+      <rect x="150" y="470" width="56" height="60"/>
+      <rect x="206" y="410" width="160" height="180" rx="26"/>
+      <path d="M366 440 486 468V532L366 560Z"/>
+      <rect x="486" y="468" width="628" height="64" fill="url(#weave)"/>
+      <path d="M1114 468 1234 440V560L1114 532Z"/>
+      <rect x="1234" y="410" width="160" height="180" rx="26"/>
+      <rect x="1394" y="470" width="56" height="60"/>
+    </g>
+
+    <!-- dimension: composite tube -->
+    <g stroke="#13B5EA" stroke-width="2">
+      <line x1="486" y1="456" x2="486" y2="364"/>
+      <line x1="1114" y1="456" x2="1114" y2="364"/>
+      <line x1="492" y1="380" x2="1108" y2="380" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text x="800" y="356" text-anchor="middle" font-size="28" letter-spacing="4">COMPOSITE TUBE</text>
+
+    <!-- leaders -->
+    <g stroke="#13B5EA" stroke-width="2" fill="none">
+      <path d="M286 600 250 690H150"/>
+      <path d="M426 548 470 690H560"/>
+    </g>
+    <text x="150" y="722" font-size="24" letter-spacing="3">TRIPOD JOINT</text>
+    <text x="470" y="722" font-size="24" letter-spacing="3">END FITTING</text>
+
+    <!-- callout -->
+    <text x="120" y="200" font-size="26" letter-spacing="4" fill="#13B5EA">VU18 · DRIVETRAIN</text>
+    <text x="114" y="296" font-size="96" font-weight="700" fill="#FFFFFF">−58% MASS</text>
+    <text x="1480" y="200" font-size="22" letter-spacing="3" text-anchor="end" fill="#8FB8D6">PROJECTED · STEEL → COMPOSITE</text>
+
+    <!-- title block -->
+    <g stroke="#13B5EA" stroke-opacity=".8" stroke-width="2" fill="none">
+      <rect x="1040" y="780" width="480" height="140"/>
+      <line x1="1040" y1="828" x2="1520" y2="828"/>
+      <line x1="1040" y1="874" x2="1520" y2="874"/>
+    </g>
+    <text x="1060" y="813" font-size="22" letter-spacing="3" fill="#FFFFFF">NOVARACING FSAE</text>
+    <text x="1060" y="860" font-size="20" letter-spacing="2">HALF-SHAFT · CONCEPT</text>
+    <text x="1060" y="906" font-size="18" letter-spacing="2" fill="#8FB8D6">ILLUSTRATION · NOT TO SCALE</text>
+  </g>
+</svg>
