@@ -136,16 +136,46 @@
     </section>
 
     <!-- ===== Updates feed =====
-         Newest update goes at the TOP of the feed, above the "No updates yet" line (delete that line once the first post is in).
+         Newest update goes at the TOP of the feed.
          Uses the same post templates as about.html (single photo, multi-photo carousel, text),
          except image paths here start with ../assets/ instead of assets/. -->
     <section class="section" aria-labelledby="feed-title">
       <div class="container">
         <h2 id="feed-title" class="sr-only">Updates</h2>
         <div class="feed">
+          <article class="post" data-reveal>
+            <header class="post-head"><span class="post-context">ME³ Lab · Villanova University</span></header>
+            <figure class="post-media" data-zoom>
+              <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Photos: ME³ Lab potentiostat work">
+                <div class="carousel-track" tabindex="0">
+                  <div class="carousel-slide">
+                    <img src="../assets/img/potentiostat-resistor-test-640.jpg"
+                         srcset="../assets/img/potentiostat-resistor-test-640.jpg 640w, ../assets/img/potentiostat-resistor-test-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                         alt="Red, blue, green and black leads from the CE, RE1, RE2 and WE terminals on the back of a potentiostat, clipped across a single resistor">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/img/potentiostat-dummy-cell-640.jpg"
+                         srcset="../assets/img/potentiostat-dummy-cell-640.jpg 640w, ../assets/img/potentiostat-dummy-cell-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                         alt="A Solartron potentiostat on a lab bench, wired to a ModuLab dummy cell test box">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/img/potentiostat-old-internals-640.jpg"
+                         srcset="../assets/img/potentiostat-old-internals-640.jpg 640w, ../assets/img/potentiostat-old-internals-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="853" loading="lazy" decoding="async"
+                         alt="Inside an older potentiostat: a circuit board with relays and chips, with cables running to the terminals on the case">
+                  </div>
+                </div>
+              </div>
+              <!-- Caption goes here: <figcaption class="post-body"><p>CAPTION</p></figcaption> -->
+            </figure>
+            <footer class="post-foot"><span class="tag">Research</span><span class="tag">Potentiostat</span><time class="post-date" datetime="2026-10">Oct 2026</time></footer>
+          </article>
+
           <p class="feed-end">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            No updates yet. Check back soon
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+            You’re all caught up
           </p>
         </div>
       </div>
