@@ -130,23 +130,23 @@
 
     <!-- ===== Feed =====
          Newest post goes at the TOP of the feed. Copy a template below and edit it.
-         The header line is the location, event or topic. The date and tags sit at the bottom.
+         The header line is the location, event or topic, with the date at the top right. Tags sit at the bottom.
 
          SINGLE-PHOTO POST
          <article class="post" data-reveal>
-           <header class="post-head"><span class="post-context">LOCATION OR EVENT</span></header>
+           <header class="post-head"><span class="post-context">LOCATION OR EVENT</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
            <figure class="post-media" data-zoom>
              <div class="post-photo"><img src="assets/img/PHOTO-640.jpg" srcset="assets/img/PHOTO-640.jpg 640w, assets/img/PHOTO-1280.jpg 1280w"
                sizes="(min-width: 700px) 620px, 100vw" width="640" height="HEIGHT" loading="lazy" decoding="async" alt="WHAT THE PHOTO SHOWS"></div>
              <figcaption class="post-body"><p>CAPTION</p></figcaption>
            </figure>
-           <footer class="post-foot"><span class="tag">TOPIC</span><time class="post-date" datetime="2026-10">Oct 2026</time></footer>
+           <footer class="post-foot"><span class="tag">TOPIC</span></footer>
          </article>
 
          MULTI-PHOTO POST (swipe / arrows). Add one carousel-slide per photo.
          Optional: style="--post-ar: 1 / 1" on the carousel to change the frame shape (default 4 / 5).
          <article class="post" data-reveal>
-           <header class="post-head"><span class="post-context">LOCATION OR EVENT</span></header>
+           <header class="post-head"><span class="post-context">LOCATION OR EVENT</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
            <figure class="post-media" data-zoom>
              <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Photos: LOCATION OR EVENT">
                <div class="carousel-track" tabindex="0">
@@ -156,17 +156,17 @@
              </div>
              <figcaption class="post-body"><p>CAPTION</p></figcaption>
            </figure>
-           <footer class="post-foot"><span class="tag">TOPIC</span><time class="post-date" datetime="2026-10">Oct 2026</time></footer>
+           <footer class="post-foot"><span class="tag">TOPIC</span></footer>
          </article>
 
          TEXT POST (a photo or carousel figure can go between the header and body)
          <article class="post post--text" data-reveal>
-           <header class="post-head"><span class="post-context">LOCATION OR EVENT</span></header>
+           <header class="post-head"><span class="post-context">LOCATION OR EVENT</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
            <div class="post-body">
              <h3 class="post-title">TITLE</h3>
              <p>PARAGRAPH</p>
            </div>
-           <footer class="post-foot"><span class="tag">TOPIC</span><time class="post-date" datetime="2026-10">Oct 2026</time></footer>
+           <footer class="post-foot"><span class="tag">TOPIC</span></footer>
          </article>
     -->
     <section class="section" aria-labelledby="feed-title">
@@ -174,7 +174,7 @@
         <h2 id="feed-title" class="sr-only">Posts</h2>
         <div class="feed">
           <article class="post" data-reveal>
-            <header class="post-head"><span class="post-context">FSAE Michigan · Michigan International Speedway</span></header>
+            <header class="post-head"><span class="post-context">FSAE Michigan · Michigan International Speedway</span><time class="post-date" datetime="2026-05">May 2026</time></header>
             <figure class="post-media" data-zoom>
               <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Photos: FSAE Michigan">
                 <div class="carousel-track" tabindex="0">
@@ -202,7 +202,7 @@
                 <p>Competition week at FSAE Michigan: under the Cup Series sign at MIS, design presentation prep in the team trailer, and an overnight engine swap after an engine failure that ran until 5 a.m.</p>
               </figcaption>
             </figure>
-            <footer class="post-foot"><span class="tag">Motorsport</span><span class="tag">FSAE Michigan</span><time class="post-date" datetime="2026-05">May 2026</time></footer>
+            <footer class="post-foot"><span class="tag">Motorsport</span><span class="tag">FSAE Michigan</span></footer>
           </article>
 
           <p class="feed-end">
