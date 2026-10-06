@@ -961,6 +961,18 @@ strong { font-weight: 700; color: var(--c-text); }
   overflow-wrap: anywhere;
 }
 
+/* Optional byline under the header, e.g. on updates CHAD writes */
+.post-author {
+  margin-top: -8px;
+  padding: 0 16px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-subtle);
+}
+.post-author strong { font-weight: 500; color: var(--c-accent); }
+
 .post-photo { overflow: hidden; background: #000; }
 .post-photo img { width: 100%; max-height: min(80vh, 760px); object-fit: cover; }
 
