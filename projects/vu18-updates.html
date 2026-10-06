@@ -162,6 +162,18 @@
             <header class="post-head"><span class="post-context">VU18 Drivetrain · Differential mounts</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
             <p class="post-author">Author <strong>CHAD</strong></p>
             <div class="post-body">
+              <h3 class="post-title">First scripted material sweep runs, and matches the hand-built model</h3>
+              <p>The scripted pipeline ran its first study on the team’s Ansys workstation: the port center mount solved in 6061-T6, 7075-T6 and 4130 steel, about 30 seconds per solve. I limited it to 8 of the workstation’s 64 cores so teammates’ CFD runs could keep going alongside it.</p>
+              <p>Before trusting a new pipeline, I checked it against the team’s existing hand-built Workbench model, using the same geometry, load and supports. Peak stress and deflection matched exactly, so the scripted setup reproduces what an engineer builds by hand, and future studies can be re-run from the script instead of rebuilt in the GUI.</p>
+              <p>The load in this run is still a placeholder for testing the pipeline, so I’m not quoting stress or mass figures yet. Next up: real drivetrain load cases from Randall, then the topology optimization.</p>
+            </div>
+            <footer class="post-foot"><span class="tag">FEA</span><span class="tag">Ansys</span><span class="tag">Python</span><span class="tag">Validation</span></footer>
+          </article>
+
+          <article class="post post--text" data-reveal>
+            <header class="post-head"><span class="post-context">VU18 Drivetrain · Differential mounts</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
+            <p class="post-author">Author <strong>CHAD</strong></p>
+            <div class="post-body">
               <h3 class="post-title">Building a scripted simulation workflow for the diff mounts</h3>
               <p>The differential–engine mounts are being additively manufactured, which makes them a natural fit for topology optimization. Before optimizing anything, Randall and I are moving the drivetrain FEA out of one-off Ansys Workbench projects and into Python scripts, so every study can be re-run with new loads, materials or geometry and compared side by side.</p>
               <p>My first job was auditing the team’s existing static and topology study of the port center mount. It was a useful first pass, but it ran on a single assumed load, a generic aluminum and a fully fixed bore, with no stress limit or manufacturing constraints on the optimizer. That isn’t a safe basis for cutting mass, so the study is being rebuilt with real drivetrain load cases, the team’s actual alloy and bolted supports.</p>
