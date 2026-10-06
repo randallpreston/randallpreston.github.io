@@ -136,16 +136,27 @@
     </section>
 
     <!-- ===== Updates feed =====
-         Newest update goes at the TOP of the feed, above the "No updates yet" line (delete that line once the first post is in).
+         Newest update goes at the TOP of the feed.
          Uses the same post templates as about.html (single photo, multi-photo carousel, text),
          except image paths here start with ../assets/ instead of assets/. -->
     <section class="section" aria-labelledby="feed-title">
       <div class="container">
         <h2 id="feed-title" class="sr-only">Updates</h2>
         <div class="feed">
+          <article class="post post--text" data-reveal>
+            <header class="post-head"><span class="post-context">VU18 Drivetrain · Differential mounts</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
+            <div class="post-body">
+              <h3 class="post-title">Building a scripted simulation workflow for the diff mounts</h3>
+              <p>The differential–engine mounts are being additively manufactured, which makes them a natural fit for topology optimization. Before optimizing anything, I’m moving the drivetrain FEA out of one-off Ansys Workbench projects and into Python scripts, so every study can be re-run with new loads, materials or geometry and compared side by side.</p>
+              <p>First step was auditing our existing static and topology study of the port center mount. It was a useful first pass, but it ran on a single assumed load, a generic aluminum and a fully fixed bore, with no stress limit or manufacturing constraints on the optimizer. I don’t want to cut mass based on that, so the study is being rebuilt with real drivetrain load cases, our actual alloy and bolted supports.</p>
+              <p>Alongside it, I set up a scripted material sweep that runs the same mount in 6061-T6, 7075-T6 and 4130 steel and logs stress, deflection, mass and safety factor for each. Next up: running the sweep on the team’s Ansys workstation, then the rebuilt topology optimization.</p>
+            </div>
+            <footer class="post-foot"><span class="tag">FEA</span><span class="tag">Ansys</span><span class="tag">Python</span><span class="tag">Topology optimization</span></footer>
+          </article>
+
           <p class="feed-end">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            No updates yet. Check back soon
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+            You’re all caught up
           </p>
         </div>
       </div>
