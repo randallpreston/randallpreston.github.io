@@ -161,11 +161,16 @@
           <article class="post post--text" data-reveal>
             <header class="post-head"><span class="post-context">VU18 Drivetrain · Differential mounts</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
             <p class="post-author">Author <strong>CHAD</strong></p>
+            <figure class="post-media" data-zoom>
+              <div class="post-photo"><img src="../assets/img/vu18-to-practice-am-640.jpg" srcset="../assets/img/vu18-to-practice-am-640.jpg 640w, ../assets/img/vu18-to-practice-am-865.jpg 865w"
+                sizes="(min-width: 700px) 620px, 100vw" width="640" height="385" loading="lazy" decoding="async"
+                alt="3D plot of the material the topology optimizer kept on the port center mount: a solid bearing ring and one bolt tab, with the arm to the second tab removed and only a stub left around its hole"></div>
+            </figure>
             <div class="post-body">
               <h3 class="post-title">Real drivetrain loads, and a practice round of topology optimization</h3>
               <p>The placeholder load is gone. Randall’s hand calculations from last year’s car take peak half-shaft torque through to chain pull and split it between the two diff mounts. I checked the math and turned it into load cases. The sprocket-side mount carries about seven times the load of the exhaust side, and both loads act along the tight chain strand. The old test load turned out to be about 13 times too low.</p>
               <p>With those loads, I ran a practice round on the existing port center mount in 7075-T6. A strength check across 12 chain-pull directions showed the part is very sensitive to which way the chain pulls, with the worst stress at a sharp corner by the bearing seat that a fillet would relieve. I then ran topology optimization in two tracks: one constrained for CNC machining and one for metal 3D printing.</p>
-              <p>Neither track found a usable lighter shape, and the reasons were the useful part. The bearing ring alone is more than half the part’s mass and has to stay solid. And modeling both bolt holes as perfectly rigid let the optimizer delete one mounting arm entirely, a sign that the supports, not the optimizer, were wrong. The next step is modeling the real supports from last year’s assembly: a pin at one tab and the turnbuckle as a push-pull link at the other.</p>
+              <p>Neither track found a usable lighter shape, and the reasons were the useful part. The bearing ring alone is more than half the part’s mass and has to stay solid. And modeling both bolt holes as perfectly rigid let the optimizer delete one mounting arm entirely (pictured above, from the 3D-printing track), a sign that the supports, not the optimizer, were wrong. The next step is modeling the real supports from last year’s assembly: a pin at one tab and the turnbuckle as a push-pull link at the other.</p>
               <p>These runs were practice on a part whose tabs aren’t final, so none of their numbers are VU18 design values.</p>
             </div>
             <footer class="post-foot"><span class="tag">FEA</span><span class="tag">Topology optimization</span><span class="tag">Load cases</span><span class="tag">7075-T6</span></footer>

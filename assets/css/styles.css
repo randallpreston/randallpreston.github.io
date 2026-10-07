@@ -980,6 +980,7 @@ strong { font-weight: 700; color: var(--c-text); }
 .post-body p { font-size: 1rem; line-height: 1.6; }
 .post-body p + p { margin-top: 0.8em; }
 .post--text .post-body { padding-top: 2px; }
+.post--text .post-media + .post-body { padding-top: 16px; }
 
 .post-title {
   margin-bottom: 10px;
