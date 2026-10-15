@@ -119,6 +119,12 @@
     const dCap = dialog.querySelector('figcaption');
     let opener = null;
 
+    // Open the biggest file in srcset, not the smaller one the page layout picked
+    const largest = (img) => img.srcset
+      .split(',')
+      .map((c) => c.trim().split(/\s+/))
+      .reduce((a, b) => (parseInt(b[1], 10) > parseInt(a[1], 10) ? b : a), [img.src, '0w'])[0];
+
     dialog.querySelector('.lightbox-close').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
     dialog.addEventListener('close', () => {
@@ -138,7 +144,7 @@
 
       btn.addEventListener('click', () => {
         opener = btn;
-        dImg.src = img.dataset.full || img.currentSrc || img.src;
+        dImg.src = largest(img);
         dImg.alt = img.alt;
         const caption = img.closest('figure')?.querySelector('figcaption');
         dCap.textContent = caption ? caption.textContent.trim() : '';
