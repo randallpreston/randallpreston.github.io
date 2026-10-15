@@ -16,7 +16,7 @@ projects/
 404.html                "Page not found" page
 assets/
   css/styles.css        All styling. Colors, fonts and spacing are tokens at the top.
-  js/main.js            Menu, dropdown, scroll effects, photo lightbox
+  js/main.js            Menu, dropdown, scroll effects, photo lightbox, carousels
   img/                  Web-optimized photos + blueprint SVG placeholders
   Randall-Preston-Resume.pdf
 tools/optimize-images.ps1   Resizes new photos for the site
@@ -33,26 +33,17 @@ python -m http.server 8080
 
 Then open http://localhost:8080. You can also double-click `index.html`, but a few things, like the 404 page, only behave correctly through a server.
 
-## Publish on GitHub Pages
+## Publishing
 
-Git isn't installed on this PC yet. The easiest route is **GitHub Desktop** (desktop.github.com).
+The site is live at https://randallpreston.github.io. GitHub Pages publishes the `main` branch, so anything
+pushed or merged to `main` is live about a minute later.
 
-1. On github.com, create a new **public** repository named exactly `YOUR-USERNAME.github.io`.
-   With that name, the site lives at `https://YOUR-USERNAME.github.io`, the cleanest URL for a résumé.
-2. In GitHub Desktop: **File → Add local repository →** choose `C:\Portfolio` → "create a repository" if asked → **Publish repository**.
-   Uncheck "Keep this code private" unless your GitHub Pro / Student Pack plan allows private Pages.
-3. On github.com, open the repository's **Settings → Pages**. Under "Build and deployment", pick **Deploy from a branch**, branch **main**, folder **/ (root)**, then save.
-4. After about a minute the site is live. Put that URL on your résumé and LinkedIn.
-
-The `og:image` line in each HTML file's `<head>` already points to `https://randallpreston.github.io/assets/img/og-image.jpg`
+The `og:image` line in each HTML file's `<head>` points to `https://randallpreston.github.io/assets/img/og-image.jpg`
 (LinkedIn needs a full URL to show the preview image). If you switch to a custom domain, update that URL on every page.
-
-If you use a different repository name (e.g. `portfolio`), the site will be at `https://YOUR-USERNAME.github.io/portfolio/`.
-Everything still works except the 404 page's "Back to home" link; change its `href="/"` to `href="/portfolio/"`.
 
 ## Common edits
 
-- **Text:** edit the HTML directly. The header and footer are repeated on every page, so update all six pages (index, about and the four project pages) when you change a nav link.
+- **Text:** edit the HTML directly. The header and footer are repeated on every page, so update all nine pages (index, about, the four project pages and the three updates pages) when you change a nav link.
 - **Colors / fonts:** the `:root` block at the top of `assets/css/styles.css`.
 - **Résumé:** replace `assets/Randall-Preston-Resume.pdf` with a file of the same name.
 - **New photos:** drop the original in `Media/`, then run

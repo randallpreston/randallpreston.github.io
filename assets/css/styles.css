@@ -183,8 +183,6 @@ strong { font-weight: 700; color: var(--c-text); }
   color: var(--c-text-muted);
 }
 
-.muted { color: var(--c-text-muted); }
-
 .status {
   display: inline-flex;
   align-items: center;
@@ -1375,12 +1373,10 @@ strong { font-weight: 700; color: var(--c-text); }
 .gallery { display: flex; align-items: flex-start; gap: 12px; }
 .gallery > figure { flex: var(--ar) 1 0%; min-width: 0; }
 .gallery .media-frame { border-radius: 0 0 var(--radius-feature-sm) 0; }
-.gallery.is-single > figure { flex: 0 1 auto; width: min(100%, 560px); }
 
 @media (max-width: 639px) {
   .gallery { flex-direction: column; gap: 24px; }
-  .gallery > figure,
-  .gallery.is-single > figure { flex: none; width: 100%; }
+  .gallery > figure { flex: none; width: 100%; }
 }
 
 /* Full-width render on black */
@@ -1496,7 +1492,6 @@ strong { font-weight: 700; color: var(--c-text); }
 }
 
 .dg-line { fill: none; stroke: var(--c-accent); stroke-width: 3; }
-.dg-thin { fill: none; stroke: var(--c-border-strong); stroke-width: 2; }
 .dg-dash { fill: none; stroke: var(--c-text-subtle); stroke-width: 1.5; stroke-dasharray: 6 6; }
 .dg-fluid { fill: var(--c-accent); fill-opacity: 0.12; }
 .dg-metal { fill: #c9d3e0; }
@@ -1625,6 +1620,11 @@ strong { font-weight: 700; color: var(--c-text); }
 .reveal-ready [data-reveal]:not(.is-visible) {
   opacity: 0;
   transform: translateY(24px);
+}
+
+/* Printing or "Save as PDF" never scrolls, so show anything not yet revealed */
+@media print {
+  .reveal-ready [data-reveal]:not(.is-visible) { opacity: 1; transform: none; transition: none; }
 }
 
 /* ---------- Reduced motion ---------- */
