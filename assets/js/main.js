@@ -25,6 +25,12 @@
     if (e.target.closest('a')) setMenu(false);
   });
 
+  // Close the menu when Tab moves focus past it onto the page it covers
+  mobileMenu?.addEventListener('focusout', (e) => {
+    const to = e.relatedTarget;
+    if (to && to !== menuToggle && !mobileMenu.contains(to)) setMenu(false);
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
       setMenu(false);
@@ -45,7 +51,8 @@
       dd.classList.toggle('is-open', open);
     };
 
-    btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+    // A mouse click lands after hover has already opened the menu, so keep it open
+    btn.addEventListener('click', (e) => setOpen(e.pointerType === 'mouse' || btn.getAttribute('aria-expanded') !== 'true'));
 
     dd.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') setOpen(true); });
     dd.addEventListener('pointerleave', (e) => {
@@ -183,6 +190,9 @@
       index = Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / track.clientWidth)));
       count.textContent = `${index + 1}/${slides.length}`;
       dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+      // Don't strand keyboard focus on a button that is about to be disabled
+      if (document.activeElement === next && index === slides.length - 1) { prev.disabled = false; prev.focus({ preventScroll: true }); }
+      if (document.activeElement === prev && index === 0) { next.disabled = false; next.focus({ preventScroll: true }); }
       prev.disabled = index === 0;
       next.disabled = index === slides.length - 1;
     };
