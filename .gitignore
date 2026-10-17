@@ -7,3 +7,12 @@ Media/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# AI tool output: keep off the public site
+graphify-out/
+.playwright-mcp/
+.impeccable/
+/PRODUCT.md
+/DESIGN.md
+.mcp.json
+CLAUDE.local.md

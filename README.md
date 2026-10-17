@@ -39,7 +39,8 @@ The site is live at https://randallpreston.github.io. GitHub Pages publishes the
 pushed or merged to `main` is live about a minute later.
 
 The `og:image` line in each HTML file's `<head>` points to `https://randallpreston.github.io/assets/img/og-image.jpg`
-(LinkedIn needs a full URL to show the preview image). If you switch to a custom domain, update that URL on every page.
+(LinkedIn needs a full URL to show the preview image). If you switch to a custom domain, update that URL on every page,
+along with each page's `<link rel="canonical">` and `og:url` lines, which hold that page's own full address.
 
 ## Common edits
 
@@ -50,7 +51,8 @@ The `og:image` line in each HTML file's `<head>` points to `https://randallprest
   ```
   powershell -ExecutionPolicy Bypass -File tools\optimize-images.ps1 -Source Media\my-photo.jpg -Name vu18-diff-mount
   ```
-  This creates `assets/img/vu18-diff-mount-640.jpg` and `-1280.jpg`, with location metadata stripped. Copy an existing
+  This creates `assets/img/vu18-diff-mount-640.jpg` and `-1280.jpg`, with location metadata stripped (if the original is
+  narrower than 1280 px, the second file is named with its real width; the script prints the names). Copy an existing
   `<figure data-zoom>` block from `projects/vu17.html` and point it at the new files. Set `--ar` to width ÷ height
   so gallery rows line up.
 - **Replace a blueprint placeholder** (VU18, BeetleBot, ME³): swap the `.svg` `src` for your photo or CAD render,
