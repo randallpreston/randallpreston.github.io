@@ -736,24 +736,9 @@ strong { font-weight: 700; color: var(--c-text); }
 .fact-list li { display: grid; gap: 2px; font-size: var(--fs-small); color: var(--c-text-muted); }
 .fact-title { font-size: 1.0625rem; font-weight: 700; color: var(--c-text); }
 
-/* Stats row */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: clamp(56px, 7vw, 104px);
-  border-top: 1px solid var(--c-border);
-}
-
-@media (min-width: 1024px) {
-  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-
-.stat { padding: 24px 16px 0 0; }
-
-@media (min-width: 1024px) {
-  .stat { padding: 28px 24px 0 24px; border-left: 1px solid var(--c-border); }
-  .stat:first-child { padding-left: 0; border-left: 0; }
-}
+/* Big GPA at the top of the Education column */
+.gpa { margin-top: 16px; }
+.gpa + .fact-list { margin-top: 28px; }
 
 .stat-value {
   font-size: clamp(2.5rem, 1.4rem + 3.4vw, 4.75rem);
@@ -771,7 +756,39 @@ strong { font-weight: 700; color: var(--c-text); }
   letter-spacing: 0;
   color: var(--c-text-muted);
 }
-.stat-label { max-width: 24ch; margin-top: 12px; font-size: var(--fs-small); color: var(--c-text-muted); text-wrap: pretty; }
+.stat-label { margin-top: 12px; font-size: var(--fs-small); color: var(--c-text-muted); text-wrap: pretty; }
+
+/* Minors + next semester's classes. Columns line up with the portrait and About text above. */
+.academics {
+  display: grid;
+  gap: 56px;
+  margin-top: clamp(56px, 7vw, 104px);
+  padding-top: 32px;
+  border-top: 1px solid var(--c-border);
+}
+
+@media (min-width: 900px) {
+  .academics {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: clamp(40px, 5vw, 96px);
+  }
+}
+
+.academics .label + .spec-list { margin-top: 8px; }
+.academics-intro { max-width: 60ch; margin-top: 16px; color: var(--c-text-muted); }
+
+.course-groups { display: grid; gap: 32px; margin-top: 28px; }
+
+@media (min-width: 640px) {
+  .course-groups { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); }
+}
+
+.course-group-title {
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--c-accent);
+  font-size: 1.125rem;
+  font-stretch: 112%;
+}
 
 /* ---------- Full-bleed photo band ---------- */
 .band-figure { position: relative; }
@@ -914,6 +931,10 @@ strong { font-weight: 700; color: var(--c-text); }
   border-bottom: 1px solid var(--c-border);
 }
 .spec-list .sub { display: block; margin-top: 4px; font-size: 0.875rem; color: var(--c-text-muted); }
+/* A row with a note under it: name and tag share the first line (the name wraps if space is tight, like plain rows), note runs full width under them */
+.spec-list li.has-note { flex-wrap: wrap; row-gap: 6px; }
+.spec-list li.has-note > :first-child { flex: 1 1 0; min-width: 0; }
+.spec-list li.has-note > .sub { flex-basis: 100%; margin-top: 0; }
 
 .tag {
   flex-shrink: 0;
@@ -930,6 +951,10 @@ strong { font-weight: 700; color: var(--c-text); }
 
 .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-list .tag { padding: 6px 12px; font-size: 0.75rem; color: var(--c-text); }
+
+/* Status tags: filled = done, accent outline = in progress or ahead of schedule, plain = planned */
+.tag-active { border-color: var(--c-accent); color: var(--c-accent); }
+.tag-done { border-color: var(--c-accent); background: var(--c-accent); color: var(--c-on-accent); }
 
 /* ---------- Social-style feed (More About Me + project updates) ---------- */
 .feed {
