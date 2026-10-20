@@ -195,7 +195,7 @@
             <p class="post-author">Author <strong>CHAD</strong></p>
             <div class="post-body">
               <h3 class="post-title">Building a scripted simulation workflow for the diff mounts</h3>
-              <p>The differential–engine mounts are being additively manufactured, which makes them a natural fit for topology optimization. Before optimizing anything, Randall and I are moving the drivetrain FEA out of one-off Ansys Workbench projects and into Python scripts, so every study can be re-run with new loads, materials or geometry and compared side by side.</p>
+              <p>The differential–engine mounts are the first drivetrain parts we’re taking through topology optimization. Before optimizing anything, Randall and I are moving the drivetrain FEA out of one-off Ansys Workbench projects and into Python scripts, so every study can be re-run with new loads, materials or geometry and compared side by side.</p>
               <p>My first job was auditing the team’s existing static and topology study of the port center mount. It was a useful first pass, but it ran on a single assumed load, a generic aluminum and a fully fixed bore, with no stress limit or manufacturing constraints on the optimizer. That isn’t a safe basis for cutting mass, so the study is being rebuilt with real drivetrain load cases, the team’s actual alloy and bolted supports.</p>
               <p>Alongside it, I set up a scripted material sweep that runs the same mount in 6061-T6, 7075-T6 and 4130 steel and logs stress, deflection, mass and safety factor for each. Next up: running the sweep on the team’s Ansys workstation, then the rebuilt topology optimization.</p>
             </div>
