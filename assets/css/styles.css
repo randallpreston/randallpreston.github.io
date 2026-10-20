@@ -963,6 +963,13 @@ strong { font-weight: 700; color: var(--c-text); }
 .spec-list li.has-note { flex-wrap: wrap; row-gap: 6px; }
 .spec-list li.has-note > :first-child { flex: 1 1 0; min-width: 0; }
 .spec-list li.has-note > .sub { flex-basis: 100%; margin-top: 0; }
+/* A long tag moves under the name when the two don't fit on one line. In the course lists every
+   tag moves together once the column is narrower than "Mechatronics" plus its tag needs. */
+.spec-list li.tag-drops { flex-wrap: wrap; row-gap: 8px; }
+.course-groups > div { container-type: inline-size; }
+@container (max-width: 339px) {
+  .spec-list li.tag-drops { flex-direction: column; align-items: flex-start; }
+}
 
 .tag {
   flex-shrink: 0;
