@@ -939,8 +939,15 @@ strong { font-weight: 700; color: var(--c-text); }
 /* ---------- Skills ---------- */
 .skills-grid { display: grid; gap: 48px; }
 
-@media (min-width: 900px) {
-  .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(32px, 4vw, 64px); }
+@media (min-width: 640px) {
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px clamp(32px, 4vw, 64px); }
+  /* Headings in a row share one track, so their rules line up even when "Relevant Coursework" wraps */
+  .skill-group { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+  .skill-group h3 { align-self: end; }
+  .skill-group .spec-list { align-self: start; }
+}
+@media (min-width: 1200px) {
+  .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 .skill-group h3 {
