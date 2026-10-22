@@ -734,7 +734,7 @@ strong { font-weight: 700; color: var(--c-text); }
   border-top: 1px solid var(--c-border);
 }
 
-.edu-grid { display: grid; gap: 32px; margin-top: 20px; }
+.edu-grid { display: grid; gap: 32px; margin-top: 20px; align-items: start; }
 .edu-grid > .fact-list { margin-top: 0; }
 
 @media (min-width: 640px) {
@@ -782,6 +782,11 @@ strong { font-weight: 700; color: var(--c-text); }
 }
 .gpa-value small { margin-left: 4px; }
 .gpa-note { margin-top: 12px; font-size: var(--fs-body); color: var(--c-text-muted); }
+
+/* Relevant Coursework under the GPA, set like an Education entry: bold title, muted lines */
+.coursework { margin-top: 32px; }
+.coursework .fact-title { line-height: inherit; }
+.coursework-list { display: grid; gap: 4px; margin-top: 4px; color: var(--c-text-muted); }
 
 /* Keeps a date or date range on one line */
 .nowrap { white-space: nowrap; }
@@ -941,13 +946,13 @@ strong { font-weight: 700; color: var(--c-text); }
 
 @media (min-width: 640px) {
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px clamp(32px, 4vw, 64px); }
-  /* Headings in a row share one track, so their rules line up even when "Relevant Coursework" wraps */
+  /* Headings in a row share one track, so their rules line up even when "Materials & Testing" wraps */
   .skill-group { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
   .skill-group h3 { align-self: end; }
   .skill-group .spec-list { align-self: start; }
 }
-@media (min-width: 1200px) {
-  .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (min-width: 900px) {
+  .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .skill-group h3 {
