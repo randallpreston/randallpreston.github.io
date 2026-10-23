@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261023">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/main.js?v=20261023" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -63,8 +63,8 @@
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <ul class="dropdown" id="projects-menu">
-              <li><a href="vu17.html"><span class="dd-title">VU17 Design &amp; Manufacturing</span><span class="dd-meta">NovaRacing FSAE · 2026</span></a></li>
-              <li><a href="vu18.html"><span class="dd-title">VU18 Drivetrain Design</span><span class="dd-meta">NovaRacing FSAE · In design</span></a></li>
+              <li><a href="vu17.html"><span class="dd-title">VU17 Design &amp; Manufacturing</span><span class="dd-meta">NovaRacing FSAE, 2026</span></a></li>
+              <li><a href="vu18.html"><span class="dd-title">VU18 Drivetrain Design</span><span class="dd-meta">NovaRacing FSAE, in design</span></a></li>
               <li><a href="beetlebot.html"><span class="dd-title">BeetleBot</span><span class="dd-meta">Course design competition</span></a></li>
               <li><a href="me3-lab.html" aria-current="page"><span class="dd-title">ME³ Lab Research</span><span class="dd-meta">Hydrogen permeation</span></a></li>
             </ul>
@@ -129,7 +129,6 @@
               <li aria-current="page">ME³ Lab</li>
             </ol>
           </nav>
-          <p class="eyebrow">Undergraduate Research Scholar Program <span class="sep" aria-hidden="true"></span> March 2026–Present <span class="status">Ongoing</span></p>
           <h1 id="page-title" class="page-title">Hydrogen Permeation Testing in Structural Metals</h1>
           <p class="page-subtitle">ME³ Lab: Materials Engineering in Extreme Environments</p>
           <p class="lede">In Villanova’s ME³ Lab, I work with Dr. Andrew Lee and a team of six undergraduate and doctoral researchers. We study how hydrogen moves through structural metals, which matters for energy and automotive systems that use hydrogen.</p>
@@ -140,7 +139,7 @@
             <div><dt>Method</dt><dd>Electrochemical permeation (Devanathan–Stachurski)</dd></div>
           </dl>
           <div class="actions updates-actions">
-            <a class="btn btn-secondary" href="me3-lab-updates.html">Project Updates <svg class="icon i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-secondary" href="me3-lab-updates.html">Project Updates</a>
           </div>
         </div>
         <figure>
@@ -156,7 +155,6 @@
     <section class="section" aria-labelledby="context-title">
       <div class="container split">
         <div>
-          <p class="label">01 / Context</p>
           <h2 id="context-title" class="section-title">Why hydrogen permeation matters</h2>
           <div class="prose">
             <p>Hydrogen can enter structural metals, diffuse through them and degrade their mechanical properties, a problem known as hydrogen embrittlement. As energy and automotive systems take on more hydrogen, engineers need reliable data on how quickly it moves through the metals those systems are built from.</p>
@@ -164,7 +162,7 @@
           </div>
         </div>
         <div class="split-aside">
-          <h3 class="label">My role</h3>
+          <h3 class="subhead">My role</h3>
           <ul class="bullets">
             <li>Design, build and validate an electrochemical permeation test setup based on the Devanathan–Stachurski dual cell</li>
             <li>Meet weekly with the team and Dr. Lee to keep the lab’s task forces aligned</li>
@@ -179,13 +177,12 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="label">02 / Method</p>
             <h2 id="method-title" class="section-title">How the dual cell works</h2>
           </div>
           <p class="section-intro">A thin metal specimen separates two electrochemical cells. Hydrogen is generated on one side, diffuses through the metal, and is measured as an electrical current on the other.</p>
         </div>
 
-        <figure class="diagram" data-reveal>
+        <figure class="diagram">
           <div class="diagram-scroll" tabindex="0" role="region" aria-label="Dual-cell diagram (scrollable)">
             <svg viewBox="0 0 820 450" role="img" aria-labelledby="cell-title cell-desc">
               <title id="cell-title">Devanathan–Stachurski dual-cell schematic</title>
@@ -255,10 +252,10 @@
             </svg>
           </div>
           <p class="scroll-hint label">Scroll sideways to see the full diagram</p>
-          <figcaption>On the entry side, a cathodic current generates atomic hydrogen at the specimen surface, and some of it is absorbed. It diffuses through the metal. On the exit side, a potentiostat holds the surface at an oxidizing potential, so each hydrogen atom that arrives is oxidized. The resulting current is a direct, real-time measure of hydrogen flux. CE: counter electrode · RE: reference electrode · schematic, not to scale.</figcaption>
+          <figcaption>On the entry side, a cathodic current generates atomic hydrogen at the specimen surface, and some of it is absorbed. It diffuses through the metal. On the exit side, a potentiostat holds the surface at an oxidizing potential, so each hydrogen atom that arrives is oxidized. The resulting current is a direct, real-time measure of hydrogen flux. CE is the counter electrode and RE the reference electrode. Schematic, not to scale.</figcaption>
         </figure>
 
-        <figure class="diagram" data-reveal>
+        <figure class="diagram">
           <div class="diagram-scroll" tabindex="0" role="region" aria-label="Permeation transient chart (scrollable)">
             <svg viewBox="0 0 720 380" role="img" aria-labelledby="curve-title curve-desc">
               <title id="curve-title">Illustrative hydrogen permeation transient</title>
@@ -302,7 +299,7 @@
         </figure>
 
         <div class="notice">
-          <p class="label">Results</p>
+          <h3>Results</h3>
           <p>Data from the lab will be added here once it’s cleared for sharing.</p>
         </div>
       </div>
@@ -321,13 +318,13 @@
   <section class="resume-band" aria-label="Résumé">
     <a class="resume-link" href="../assets/Randall-Preston-Resume.pdf" target="_blank" rel="noopener">
       <span class="resume-link-main">View my résumé <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      <span class="resume-link-sub">PDF · Opens in a new tab</span>
+      <span class="resume-link-sub">PDF, opens in a new tab</span>
     </a>
   </section>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span data-year>2026</span> Randall Preston · Villanova University</p>
+      <p>© <span data-year>2026</span> Randall Preston</p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/randall-preston/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
         <a href="mailto:rprest01@villanova.edu">Email</a>
