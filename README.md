@@ -45,7 +45,13 @@ along with each page's `<link rel="canonical">` and `og:url` lines, which hold t
 ## Common edits
 
 - **Text:** edit the HTML directly. The header and footer are repeated on every page, so update all nine pages (index, about, the four project pages and the three updates pages) when you change a nav link.
-- **Colors / fonts:** the `:root` block at the top of `assets/css/styles.css`.
+- **Colors / fonts:** the `:root` block at the top of `assets/css/styles.css`. The palette is Villanova navy
+  (`#00205b`) and Villanova blue (`#13b5ea`) on a light aluminum gray; the typefaces are Big Shoulders (headings)
+  and Libre Franklin (text), loaded from Google Fonts in each page's `<head>`. `404.html` has its own copy of these
+  styles because it can't rely on relative paths.
+- **After changing the CSS or JavaScript:** bump the `?v=` date on the `styles.css` and `main.js` links in all nine
+  pages (for example `styles.css?v=20261023` to `?v=20261105`). Browsers and GitHub Pages cache those files for a
+  while, and a new `?v=` makes them fetch the new version right away.
 - **Résumé:** replace `assets/Randall-Preston-Resume.pdf` with a file of the same name.
 - **New photos:** drop the original in `Media/`, then run
   ```

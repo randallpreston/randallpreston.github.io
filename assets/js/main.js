@@ -94,21 +94,6 @@
     sections.forEach((s) => spy.observe(s));
   }
 
-  /* ---------- Scroll reveal ---------- */
-  const revealEls = document.querySelectorAll('[data-reveal]');
-  if (revealEls.length && !reduceMotion.matches && 'IntersectionObserver' in window) {
-    root.classList.add('reveal-ready');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    revealEls.forEach((el) => io.observe(el));
-  }
-
   /* ---------- Lightbox for project photos ---------- */
   const zoomImages = document.querySelectorAll('[data-zoom] img');
   if (zoomImages.length && typeof HTMLDialogElement === 'function') {
