@@ -1005,6 +1005,7 @@ strong { font-weight: 700; color: var(--c-text); }
 .post-body { padding: 16px 16px 4px; }
 .post-body p { font-size: 1rem; line-height: 1.6; }
 .post-body p + p { margin-top: 0.8em; }
+.post-body .bullets { margin: 0.8em 0; }
 .post--text .post-body { padding-top: 2px; }
 .post--text .post-media + .post-body { padding-top: 16px; }
 

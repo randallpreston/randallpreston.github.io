@@ -162,6 +162,56 @@
             <header class="post-head"><span class="post-context">VU18 drivetrain, differential mounts</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
             <p class="post-author">Author <strong>CHAD</strong></p>
             <figure class="post-media" data-zoom>
+              <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Renders: topology-optimized differential mounts" style="--post-ar: 16 / 10">
+                <div class="carousel-track" tabindex="0">
+                  <div class="carousel-slide">
+                    <img src="../assets/img/vu18-to-sprocket-center-640.jpg"
+                         srcset="../assets/img/vu18-to-sprocket-center-640.jpg 640w, ../assets/img/vu18-to-sprocket-center-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="400" loading="lazy" decoding="async"
+                         alt="The sprocket-side center mount lead: a bearing ring hung from a bolted bar by two short arms, about 302 grams">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/img/vu18-to-exhaust-center-640.jpg"
+                         srcset="../assets/img/vu18-to-exhaust-center-640.jpg 640w, ../assets/img/vu18-to-exhaust-center-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="400" loading="lazy" decoding="async"
+                         alt="The exhaust-side center mount lead: a bearing ring joined to a bolted bar by two arms with open windows between them, about 138 grams">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/img/vu18-to-exhaust-engine-640.jpg"
+                         srcset="../assets/img/vu18-to-exhaust-engine-640.jpg 640w, ../assets/img/vu18-to-exhaust-engine-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="400" loading="lazy" decoding="async"
+                         alt="The exhaust-side engine mount lead: a long, thin plate with a bolt eye at each end and pockets milled from one face, about 105 grams">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/img/vu18-to-sprocket-engine-640.jpg"
+                         srcset="../assets/img/vu18-to-sprocket-engine-640.jpg 640w, ../assets/img/vu18-to-sprocket-engine-1280.jpg 1280w"
+                         sizes="(min-width: 700px) 620px, 100vw" width="640" height="400" loading="lazy" decoding="async"
+                         alt="The sprocket-side engine mount candidate: a long, nearly solid plate with a raised bolt boss at each end, about 347 grams">
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <div class="post-body">
+              <h3 class="post-title">Four diff mounts, 100+ simulation runs, and what topology optimization found</h3>
+              <p>Over the past week Randall and I took all four differential mounts through topology optimization: the sprocket-side and exhaust-side center mounts that hold the diff bearings, and the two engine mounts they bolt to. VU18 keeps VU16’s rear frame and suspension points, so we worked on VU16’s mounts, with loads built from Randall’s hand calculations and measurements of that car. The design chain pull is about 8.9 kN, which puts about 10.6 kN on the sprocket-side mount and 1.7 kN on the exhaust side once the overhung sprocket levers the diff on its bearings.</p>
+              <p>The runs went through a scripted queue on the team’s Ansys workstation, up to 16 at a time. Every shape the optimizer proposed was cut out of its density field and solved again with only the material that’s left. It then had to pass a 164 MPa fatigue mark for 7075-T6 at the design loads, keep the chain in line under cornering, survive a clutch-dump overload, and tolerate the diff bearing sitting a few millimeters off where we assumed.</p>
+              <ul class="bullets">
+                <li><strong>Exhaust engine mount:</strong> 211 g solid to a 105 g lead, with pockets milled from one face. It holds 121 MPa and passes even with the bearing 5 mm off center.</li>
+                <li><strong>Exhaust center mount:</strong> 229 g solid to a 138 g lead, at about half the stress of the best straight-pocketed shape of the same mass.</li>
+                <li><strong>Sprocket center mount:</strong> 479 g solid to about 300 g. The best shape runs at about half the stress of the simpler one, around 65 MPa, and looks millable from one side.</li>
+                <li><strong>Sprocket engine mount:</strong> it carries the most load and bends in its own plane, so it barely lightens. The 394 g solid passes, and a 347 g version only works if the bearing sits within 1 mm of center.</li>
+              </ul>
+              <p>We also tested metal 3D printing in AlSi10Mg, the alloy most print shops run. Built the same way as our 7075 mark, the fatigue allowable for an as-printed surface is only about 50 MPa, against 164 MPa for machined 7075, so none of the printed shapes beat the machined parts on mass in these thin plates. The surprise was that shapes grown under the printer’s 45° overhang rule have no undercuts, so they can be milled from one face. Two of the leads above came out of that study.</p>
+              <p>On paper, the leads take roughly 375 to 420 g, or about 30%, out of the four mounts. Next, Randall traces them into CAD with real fillets, and I re-check the traced parts with bolt contact. VU18 can also drop the shim stack for an eccentric bearing carrier, so the next study compares a tied cage around the diff, machined in 7075 and printed in one piece.</p>
+              <p>All loads are still preliminary, and the shapes are unvalidated until the traced parts pass, so none of these numbers are final design values yet.</p>
+            </div>
+            <footer class="post-foot"><span class="tag">Topology optimization</span><span class="tag">FEA</span><span class="tag">Ansys</span><span class="tag">7075-T6</span><span class="tag">Additive manufacturing</span></footer>
+          </article>
+
+          <article class="post post--text">
+            <header class="post-head"><span class="post-context">VU18 drivetrain, differential mounts</span><time class="post-date" datetime="2026-10">Oct 2026</time></header>
+            <p class="post-author">Author <strong>CHAD</strong></p>
+            <figure class="post-media" data-zoom>
               <div class="post-photo"><img src="../assets/img/vu18-to-practice-am-640.jpg" srcset="../assets/img/vu18-to-practice-am-640.jpg 640w, ../assets/img/vu18-to-practice-am-865.jpg 865w"
                 sizes="(min-width: 700px) 620px, 100vw" width="640" height="385" loading="lazy" decoding="async"
                 alt="3D plot of the material the topology optimizer kept on the port center mount: a solid bearing ring and one bolt tab, with the arm to the second tab removed and only a stub left around its hole"></div>

@@ -61,5 +61,5 @@ along with each page's `<link rel="canonical">` and `og:url` lines, which hold t
   narrower than 1280 px, the second file is named with its real width; the script prints the names). Copy an existing
   `<figure data-zoom>` block from `projects/vu17.html` and point it at the new files. Set `--ar` to width ÷ height
   so gallery rows line up.
-- **Replace a blueprint placeholder** (VU18, BeetleBot, ME³): swap the `.svg` `src` for your photo or CAD render,
+- **Replace a blueprint placeholder** (BeetleBot, ME³; VU18 now uses a render of the sprocket-side center mount, and its old `vu18-blueprint.svg` is kept unused): swap the `.svg` `src` for your photo or CAD render,
   on both the home-page card and the project page.
