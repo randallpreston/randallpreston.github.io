@@ -1447,6 +1447,8 @@ strong { font-weight: 700; color: var(--c-text); }
   border-block: 1px solid var(--c-border);
 }
 
+.hero-stat + .hero-stat { border-top: 0; }
+
 @media (min-width: 900px) {
   .hero-stat { grid-template-columns: auto minmax(0, 1fr); }
 }
