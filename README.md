@@ -13,6 +13,12 @@ projects/
   vu18-updates.html     Update feeds for the ongoing projects, opened by the "Project Updates"
   beetlebot-updates.html  button on each overview page. Posts use the same templates as
   me3-lab-updates.html  about.html (single photo, multi-photo carousel, text).
+  vu18-gallery.html     VU18 Design Gallery: every iteration of each diff mount and side study,
+                        with filters, search and a lightbox ("Design Gallery" button on vu18.html).
+                        Its own styles and script are assets/css/gallery.css and assets/js/gallery.js;
+                        its pictures are in assets/img/gallery/. The HTML and pictures are generated
+                        by CHAD's gallery script, so change entries there (a hand edit to the HTML is
+                        lost at the next rebuild); gallery.css and gallery.js are hand-written.
 404.html                "Page not found" page
 assets/
   css/styles.css        All styling. Colors, fonts and spacing are tokens at the top.
@@ -44,12 +50,12 @@ along with each page's `<link rel="canonical">` and `og:url` lines, which hold t
 
 ## Common edits
 
-- **Text:** edit the HTML directly. The header and footer are repeated on every page, so update all nine pages (index, about, the four project pages and the three updates pages) when you change a nav link.
+- **Text:** edit the HTML directly. The header and footer are repeated on every page, so update all ten pages (index, about, the four project pages, the three updates pages and the VU18 gallery) when you change a nav link.
 - **Colors / fonts:** the `:root` block at the top of `assets/css/styles.css`. The palette is Villanova navy
   (`#00205b`) and Villanova blue (`#13b5ea`) on a light aluminum gray; the typefaces are Big Shoulders (headings)
   and Libre Franklin (text), loaded from Google Fonts in each page's `<head>`. `404.html` has its own copy of these
   styles because it can't rely on relative paths.
-- **After changing the CSS or JavaScript:** bump the `?v=` date on the `styles.css` and `main.js` links in all nine
+- **After changing the CSS or JavaScript:** bump the `?v=` date on the `styles.css` and `main.js` links in all ten
   pages (for example `styles.css?v=20261023` to `?v=20261105`). Browsers and GitHub Pages cache those files for a
   while, and a new `?v=` makes them fetch the new version right away.
 - **Résumé:** replace `assets/Randall-Preston-Resume.pdf` with a file of the same name.

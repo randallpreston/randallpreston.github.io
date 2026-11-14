@@ -1,0 +1,380 @@
+/* ==========================================================================
+   VU18 Design Gallery (projects/vu18-gallery.html)
+   Loaded after styles.css on that page only, so it reuses the site tokens.
+   ========================================================================== */
+
+:root {
+  --gal-pass: #0b6b3a;
+  --gal-fail: #a4231b;
+  --gal-warn: #85570a;
+  --gal-toolbar-h: 64px;
+}
+
+/* ---------- Hero ---------- */
+.gal-byline { margin-top: 20px; font-size: 0.875rem; color: var(--c-text-subtle); }
+.gal-byline strong { color: var(--c-accent); }
+.gal-hero-set { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+.gal-hero-set a { display: grid; justify-items: center; gap: 4px; text-decoration: none; }
+/* The renders are on white: multiply blends them into the aluminum page instead of boxing them */
+.gal-hero-set img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; mix-blend-mode: multiply; transition: transform var(--dur-2) var(--ease-out); }
+.gal-hero-set span { font-size: 0.875rem; font-weight: 700; color: var(--c-text-muted); }
+
+/* CAD names follow Randall's file format (PTD2001_R01.2_PortCenterMount): keep their mixed case readable in the
+   section titles, and let a long name wrap (the generator adds a break chance after each underscore) */
+.gal-section .section-title { text-transform: none; }
+.gal-hero-set span, .gal-toc .card-title, .gal-toc .card-text, .gal-section .section-title, .gal-section .section-intro,
+.gal-summary dd, .gal-title, .gal-meta, .gal-stats dd, .gal-caption, .gal-more p, .gal-lightbox figcaption {
+  overflow-wrap: anywhere;
+}
+.gal-hero-set a:hover span { color: var(--c-accent); }
+.gal-hero-set a:hover img { transform: translateY(-4px); }
+
+/* ---------- Reading notes under the hero ---------- */
+.gal-key {
+  display: grid;
+  gap: 16px 32px;
+  margin-top: 8px;
+}
+@media (min-width: 900px) {
+  .gal-key { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.gal-key p { font-size: var(--fs-small); color: var(--c-text-muted); max-width: none; }
+.gal-key strong { display: block; margin-bottom: 2px; }
+
+/* ---------- Table of contents cards ---------- */
+/* Four mounts in one row on wide screens, two by two below that (the site grid would leave a lone fourth card) */
+@media (min-width: 1024px) { .gal-toc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .gal-toc { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.gal-toc .card-media { background: none; }
+.gal-toc .card-media img { object-fit: contain; padding: 8px; mix-blend-mode: multiply; }
+.gal-toc-group + .gal-toc-group { margin-top: clamp(40px, 5vw, 64px); }
+.gal-toc-group > .label { display: block; margin-bottom: 16px; }
+.gal-toc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text-subtle);
+}
+
+/* ---------- Sticky filter bar ---------- */
+.gal-toolbar {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 30;
+  background: var(--c-bg);
+  border-block: 1px solid var(--c-border);
+}
+.gal-toolbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  padding-block: 10px;
+}
+.gal-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.gal-filter-label {
+  margin-right: 4px;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  color: var(--c-text-subtle);
+}
+.gal-chip {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--c-border-strong);
+  background: var(--c-surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-text-muted);
+  cursor: pointer;
+  transition: background-color var(--dur-1) ease-out, border-color var(--dur-1) ease-out, color var(--dur-1) ease-out;
+}
+.gal-chip:hover { border-color: var(--c-accent); color: var(--c-accent); }
+.gal-chip[aria-pressed="true"] { background: var(--c-navy); border-color: var(--c-navy); color: #fff; }
+
+.gal-search {
+  flex: 1 1 200px;
+  max-width: 320px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 0;
+  background: var(--c-surface);
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--c-text);
+}
+.gal-search::placeholder { color: var(--c-text-subtle); }
+.gal-jump {
+  min-height: 36px;
+  padding: 0 8px;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 0;
+  background: var(--c-surface);
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--c-text);
+}
+.gal-count {
+  margin-left: auto;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text-subtle);
+}
+.gal-toolbar [hidden] { display: none; }
+
+/* On small screens the bar collapses behind a button so it doesn't eat the viewport */
+.gal-toolbar-toggle { display: none; }
+@media (max-width: 759px) {
+  .js .gal-toolbar-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--c-border-strong);
+    background: var(--c-surface);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .js .gal-toolbar:not(.is-open) .gal-filter,
+  .js .gal-toolbar:not(.is-open) .gal-search,
+  .js .gal-toolbar:not(.is-open) .gal-jump { display: none; }
+  .gal-search { max-width: none; flex-basis: 100%; }
+  .gal-jump { flex-basis: 100%; }
+}
+
+/* ---------- Part sections ---------- */
+.gal-section { scroll-margin-top: calc(var(--header-h) + var(--gal-toolbar-h)); }
+.gal-section .section-head { margin-bottom: clamp(24px, 3vw, 40px); }
+.gal-section .section-title { font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.75rem); }
+
+.gal-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  margin-bottom: clamp(24px, 3vw, 40px);
+  border: 1px solid var(--c-border);
+  background: var(--c-border);
+}
+.gal-summary > div { padding: 14px 16px; background: var(--c-surface); }
+.gal-summary dt { font-size: var(--fs-label); font-weight: 500; color: var(--c-text-subtle); }
+.gal-summary dd {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.gal-summary dd small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--c-text-muted);
+}
+
+/* ---------- Iteration cards (chronological grid) ---------- */
+.gal-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+@media (min-width: 700px) {
+  .gal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+  .gal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.gal-entry {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+}
+.gal-entry[hidden] { display: none; }
+.gal-entry.is-current { border-top: 4px solid var(--c-accent); }
+
+.gal-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--c-surface);
+}
+/* Plots and renders are on white: multiply lets the white take on the card colour */
+.gal-media img { width: 100%; height: 100%; padding: 6px; object-fit: contain; mix-blend-mode: multiply; }
+.gal-entry.is-old .gal-media img { filter: saturate(0.55); opacity: 0.85; }
+.gal-zoom { display: block; width: 100%; height: 100%; cursor: zoom-in; }
+.gal-zoom:focus-visible { outline-offset: -3px; }
+.gal-more-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 3px 8px;
+  background: rgba(0, 22, 64, 0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+.gal-noimg {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+  background: var(--c-surface-2);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--c-text-subtle);
+}
+
+.gal-body { display: flex; flex-direction: column; flex: 1; gap: 10px; padding: 14px 16px 16px; }
+.gal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--c-text-subtle);
+}
+.gal-meta time { font-variant-numeric: tabular-nums; color: var(--c-text-muted); }
+.gal-title { font-size: clamp(1.375rem, 1.2rem + 0.5vw, 1.625rem); line-height: 1; }
+
+.gal-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.gal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 7px;
+  border: 1px solid var(--c-border-strong);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--c-text-muted);
+}
+.gal-badge .icon { width: 13px; height: 13px; }
+.gal-badge--current { background: var(--c-accent); border-color: var(--c-accent); color: #fff; }
+.gal-badge--lead { border-color: var(--c-accent); color: var(--c-accent); }
+.gal-badge--superseded,
+.gal-badge--dropped { border-style: dashed; color: var(--c-text-subtle); }
+.gal-badge--pass { border-color: var(--gal-pass); color: var(--gal-pass); }
+.gal-badge--fail { border-color: var(--gal-fail); color: var(--gal-fail); }
+.gal-badge--marginal { border-color: var(--gal-warn); color: var(--gal-warn); }
+.gal-badge--prelim { border-color: transparent; padding-inline: 0; font-weight: 600; color: var(--c-text-subtle); }
+
+.gal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding-block: 10px;
+  border-block: 1px solid var(--c-border);
+}
+.gal-stats dt { font-size: 0.75rem; font-weight: 500; color: var(--c-text-subtle); }
+.gal-stats dd {
+  margin-top: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+}
+.gal-stats dd small { display: block; font-size: 0.75rem; font-weight: 500; color: var(--c-text-subtle); }
+.gal-stats .is-fail { color: var(--gal-fail); }
+
+.gal-caption { font-size: 0.9375rem; line-height: 1.5; }
+
+.gal-more { margin-top: auto; font-size: 0.9375rem; }
+.gal-more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  cursor: pointer;
+  list-style: none;
+}
+.gal-more summary::-webkit-details-marker { display: none; }
+.gal-more summary .icon { width: 16px; height: 16px; transition: transform var(--dur-2) var(--ease-out); }
+.gal-more[open] summary .icon { transform: rotate(180deg); }
+.gal-more p { margin-top: 6px; line-height: 1.55; color: var(--c-text-muted); }
+.gal-more .gal-replaced { font-weight: 600; color: var(--c-text); }
+.gal-thumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.gal-thumbs a {
+  display: block;
+  width: 104px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  cursor: zoom-in;
+}
+.gal-thumbs a:hover { border-color: var(--c-accent); }
+.gal-thumbs img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+
+.gal-empty {
+  padding: 24px;
+  border: 1px dashed var(--c-border-strong);
+  text-align: center;
+  color: var(--c-text-muted);
+}
+.gal-empty[hidden] { display: none; }
+.gal-section.is-empty { display: none; }
+
+.gal-gaps { margin-top: 20px; font-size: var(--fs-small); color: var(--c-text-subtle); }
+
+/* ---------- Lightbox with previous / next ---------- */
+.gal-lightbox .lightbox-figure figcaption strong { display: block; margin-bottom: 4px; color: #fff; }
+.gal-lb-btn {
+  position: fixed;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 50%;
+  background: var(--c-surface-2);
+  color: var(--c-text);
+  cursor: pointer;
+}
+.gal-lb-btn:hover { border-color: var(--c-accent); color: var(--c-accent); }
+.gal-lb-prev { left: 12px; }
+.gal-lb-next { right: 12px; }
+.gal-lb-count {
+  position: fixed;
+  top: 24px;
+  left: 16px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text-muted);
+}
+.gal-lightbox .lightbox-figure img { background: #fff; }
+/* Touch screens and narrow windows: arrows sit under the picture so they never cover it */
+@media (max-width: 1023px), (hover: none) {
+  .gal-lb-btn { position: fixed; top: auto; bottom: 16px; margin-top: 0; }
+  .gal-lb-prev { left: calc(50% - 60px); }
+  .gal-lb-next { right: calc(50% - 60px); }
+  .gal-lightbox { padding-bottom: 80px; }
+  .gal-lightbox .lightbox-figure img { max-height: calc(100dvh - 260px); }
+}
+
+@media print {
+  .gal-toolbar, .gal-lightbox { display: none !important; }
+  .gal-more { display: block; }
+}
