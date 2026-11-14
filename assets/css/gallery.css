@@ -18,6 +18,14 @@
 /* The renders are on white: multiply blends them into the aluminum page instead of boxing them */
 .gal-hero-set img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; mix-blend-mode: multiply; transition: transform var(--dur-2) var(--ease-out); }
 .gal-hero-set span { font-size: 0.875rem; font-weight: 700; color: var(--c-text-muted); }
+
+/* CAD names follow Randall's file format (PTD2001_R01.2_PortCenterMount): keep their mixed case readable in the
+   section titles, and let a long name wrap (the generator adds a break chance after each underscore) */
+.gal-section .section-title { text-transform: none; }
+.gal-hero-set span, .gal-toc .card-title, .gal-toc .card-text, .gal-section .section-title, .gal-section .section-intro,
+.gal-summary dd, .gal-title, .gal-meta, .gal-stats dd, .gal-caption, .gal-more p, .gal-lightbox figcaption {
+  overflow-wrap: anywhere;
+}
 .gal-hero-set a:hover span { color: var(--c-accent); }
 .gal-hero-set a:hover img { transform: translateY(-4px); }
 
